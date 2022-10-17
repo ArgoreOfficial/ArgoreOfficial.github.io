@@ -1,0 +1,106 @@
+* {
+    vertical-align: top;
+}
+
+header {
+    background-color: #ED1C24;
+    position: absolute;
+
+    font-family: Calibri;
+    font-size: x-large;
+
+    width: 700px;
+    padding: 0 20px;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 10;
+    border-radius: 10px;
+    outline: solid black 3px;
+}
+
+div {
+    background-color: #22B14C;
+    display:inline-block;
+    outline: solid black 3px;
+    padding: 20px;
+}
+
+img {
+    width: 194px;
+    height: 160px;
+
+    float: right;
+    margin: 0 0 0 20px;
+    outline: solid black 3px;
+}
+
+p{
+    text-align: justify;
+}
+
+#allt {
+    position: absolute;
+    font-family: Calibri;
+
+    min-width: 674px;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#länkar {
+    position: static;
+    
+    background-color: #B5E61D;
+    width: 90px;
+    height: 400px;
+    padding: 0px 15px;
+    font-size: 22px;
+
+    line-height: 50%;
+}
+
+#gråruta {
+    position: static;
+    padding: 0 40px;
+    margin: auto auto auto 20px;
+    background-color: #C3C3C3;
+
+    height: 400px;
+    width: 450px;
+}
+
+#rubrik {
+    position: relative;
+    top: -10;
+    left: 100px;
+    padding: 0 10px 0 10px;
+    line-height: 0;
+    height: 30px;
+    
+    width: 200px;
+    font-family: 'Courier New';
+    font-weight: bold;
+    font-size: xx-large;
+    vertical-align: top;
+
+    background-color: transparent;
+
+    display: inline-block;
+    transform: scale(2, 1);
+    outline: none;
+}
+
+#textruta {
+    position: relative;
+    top: 30px;
+    background-color: inherit;
+    margin: 0;
+    padding-top: 0;
+    outline: none;
+    display: block;
+    font-size: 22px;
+    line-height: 30px;
+}

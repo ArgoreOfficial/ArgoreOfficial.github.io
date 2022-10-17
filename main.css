@@ -1,28 +1,47 @@
-.pizza {
-    background-image: url("./images/pizza.png");
+body {
+    background-image: url("./brick_wall.png");
     background-size: 256px 256px;
 }
 
-.background {
-    background-image: url("./images/brick_wall2.png");
-    background-size: 256px 256px;
-}
-
-.centerX {
-    position: absolute;
+#links div{
+    position: relative;
     left: 50%;
-    translate: -50%;
+    transform: translateX(-50%);
+
+    height: auto;
+    width: 200px;
+    
+    background-color: aliceblue;
+    margin: 20px 0;
+
+    text-align: center;
+    vertical-align:middle;
+    font-size: 30px;
+
+    transition: all ease 0.3s;
 }
 
-.centerY {
-    position: absolute;
-    top: 50%;
-    translate: 0px -50%;
+#links a{
+    text-decoration: none;
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
-.centerXY {
+#links {
     position: absolute;
-    top: 50%;
+    top: 100px;
     left: 50%;
-    translate: -50% -50%;
+    transform: translateX(-55%);
+    
+    width: 300px;
+    height: 500px;
+    padding: 0 20px;
+    background-color: rgba(20, 20, 20, 0.5);
+    line-height: 250%;
+}
+
+#links div:hover {
+    width: 220px;
+    line-height: 280%;
 }
