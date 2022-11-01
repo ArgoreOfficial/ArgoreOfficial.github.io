@@ -1,47 +1,84 @@
-body {
-    background-image: url("./brick_wall.png");
-    background-size: 256px 256px;
-}
+/*
+Palettes
+https://coolors.co/palette/f7b2b7-f7717d-de639a-7f2982-16001e
+https://coolors.co/palette/d6d6d6-ffee32-ffd100-202020-333533
+https://coolors.co/palette/222222-ffffff-1c5d99-639fab-bbcde5
+*/
 
-#links div{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-
-    height: auto;
-    width: 200px;
-    
-    background-color: aliceblue;
-    margin: 20px 0;
-
-    text-align: center;
-    vertical-align:middle;
-    font-size: 30px;
-
-    transition: all ease 0.3s;
-}
-
-#links a{
-    text-decoration: none;
-    color: black;
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    color: black;
 }
 
-#links {
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-55%);
+
+body {
+    background-color: #202020;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+div {
+    height: 100px;
+    width: 200px;
+    background-color: white;
+    transition: all ease 200ms;
+}
+
+#project_container {
+    height: 230px;
+    width: fit-content;
+    display: flex;
     
-    width: 300px;
-    height: 500px;
-    padding: 0 20px;
-    background-color: rgba(20, 20, 20, 0.5);
-    line-height: 250%;
+    background-color:transparent;
+    justify-content: center;
 }
 
-#links div:hover {
-    width: 220px;
-    line-height: 280%;
+.card {
+    position: relative;
+    margin: 10px 20px;
+    top: 0px;
+    border-radius: 10px;
+    cursor:pointer;
 }
+
+.card > p {
+    position: absolute;
+    margin: 10px;
+    bottom: 0;
+    left: 0;
+}
+
+.card:hover {
+    height:200px;
+}
+
+.card_title {
+    width: 220px;
+    background-color: #FFD100;
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+}
+
+.card_title:hover {
+    background-color: #FFEE32;
+}
+
+.card_title > h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    margin: 0;
+}
+
+.school {
+    background-color: #B1A7A6;
+}
+
+.school:hover {
+    background-color: #D3D3D3;
+}
+
