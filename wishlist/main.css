@@ -11,12 +11,11 @@
 body {
     background-color: #252422;
     overflow-x: hidden;
+    position: absolute;
+    padding: 0 0 60px 0;
 }
 
 img {
-    display: block;
-    margin: auto;
-
     max-width: 100%;
     max-height: 100%;
 
@@ -24,30 +23,33 @@ img {
 }
 
 p {
-    margin: 0 10px;
-    color: inherit;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0 10px;
 }
 
-
-.wishlist_container {
-    display: inline-flex;
-    background-color: none;
-    flex-direction: row;
+.container {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    padding: 0;
+    
     flex-wrap: wrap;
+    
     justify-content: center;
     align-self: center;
 }
 
-.wishlist_card {
+.card {
     position: absolute;
     right: 0;
     bottom: 0;
 
+    flex: auto 0 auto;
+
     height: 140px;
-    width: 520px;
+    min-width: 520px;
     margin: 10px;
-    padding: 10px;
+    padding: 10px 10px;
     
     transition: all ease 300ms;
     
@@ -60,40 +62,46 @@ p {
     background-size: 300% 300%;
     background-position: 0% 0%;
     
-    border-radius: 0px;
-    
     color: #f2e9e4;
 }
 
-.wishlist_card:hover {
-    
+.card>p {
+    color: inherit;
+}
+
+.card:hover {
     right: 5px;
     bottom: 5px;
     background-position: 100% 100%;
     color: black;
 }
 
-.wishlist_card.fav {
+.card.fav {
     background-image:url("https://img.icons8.com/fluency/512/star.png"), linear-gradient(135deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
     background-size: 200px auto, 300% 300%;
     background-repeat: no-repeat, repeat;
-    background-position: 200% -200%, 0% 0%;
+    background-position: 300% -300%, 0% 0%;
 }
 
-.wishlist_card.fav:hover {
+.card.fav:hover {
     background-position: 110% 20%, 100% 100%;
 }
 
 
-.wishlist_image {
-    height: 140px;
-    width: 140px;
+.image {
+    display: flex;
     flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+
+    aspect-ratio: 1 / 1;
+    height: 100%;
+
     background-color: white;
     border-radius: inherit;
 }
 
-.wishlist_price {
+.price {
     font-size: larger;
     position: absolute;
     bottom: 0;
@@ -101,10 +109,13 @@ p {
 }
 
 .divider {
-    position:relative;
-    align-self: center;
+    position: relative;
+
+    left: 50%;
+    transform: translateX(-50%);
+
     height: 5px;
-    width: 100vw;
+    width: 110vw;
     margin: 40px 0;
     outline:#a5a5a5 solid 2px;
 }
@@ -121,4 +132,42 @@ p {
     color: #a5a5a5;
     text-align: center;
     background-color: #252422;
+}
+
+@media (max-width: 1120px) {
+    
+    .container {
+        display: inline-block;
+    }
+    
+    .card {
+        min-width: 90%;
+        width: 90%;
+        height: 400px;
+        flex: 1 1 auto;
+        position: relative;
+
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .card>p:not(.price) {
+        font-size: 30px;
+    }
+
+    .price {
+        font-size: 50px;
+    }
+
+    .divider {
+        height: 15px;
+        outline:#a5a5a5 solid 5px;
+        margin: 50px 0;
+    }
+
+    .divider>p {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
 }
