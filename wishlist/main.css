@@ -7,6 +7,11 @@
 ::-webkit-scrollbar-thumb {
     background: #f2f2f2;
 }
+* {
+    padding: 0;
+    margin: 0;
+
+}
 
 body {
     background-color: #252422;
@@ -27,6 +32,14 @@ p {
     margin: 0 10px;
 }
 
+h1 {
+    font-size: 60px;
+    margin: 30px 0 0 0;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #f2f2f2;
+}
+
 .container {
     display: flex;
     position: relative;
@@ -34,7 +47,6 @@ p {
     padding: 0;
     
     flex-wrap: wrap;
-    
     justify-content: center;
     align-self: center;
 }
@@ -47,7 +59,7 @@ p {
     flex: auto 0 auto;
 
     height: 140px;
-    min-width: 520px;
+    width: 520px;
     margin: 10px;
     padding: 10px 10px;
     
@@ -65,7 +77,8 @@ p {
     color: #f2e9e4;
 }
 
-.card>p {
+.card>p:not(.price) {
+    font-size: 25px;
     color: inherit;
 }
 
@@ -75,18 +88,6 @@ p {
     background-position: 100% 100%;
     color: black;
 }
-
-.card.fav {
-    background-image:url("https://img.icons8.com/fluency/512/star.png"), linear-gradient(135deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-    background-size: 200px auto, 300% 300%;
-    background-repeat: no-repeat, repeat;
-    background-position: 300% -300%, 0% 0%;
-}
-
-.card.fav:hover {
-    background-position: 110% 20%, 100% 100%;
-}
-
 
 .image {
     display: flex;
@@ -102,10 +103,10 @@ p {
 }
 
 .price {
-    font-size: larger;
+    font-size: 40px;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 5px;
+    right: 5px;
 }
 
 .divider {
@@ -129,12 +130,18 @@ p {
     width: fit-content;
     padding: 0 40px;
 
+    font-size: 25px;
     color: #a5a5a5;
     text-align: center;
     background-color: #252422;
 }
 
 @media (max-width: 1120px) {
+
+    h1 {
+        font-size: 100px;    
+    }
+    
     .container {
         display: inline-block;
     }
@@ -150,6 +157,11 @@ p {
         transform: translateX(-50%);
     }
 
+    .card:hover {
+        right: 0;
+        bottom: 0;
+    }
+
     .card>p:not(.price) {
         font-size: 30px;
     }
@@ -161,12 +173,11 @@ p {
     .divider {
         height: 15px;
         outline:#a5a5a5 solid 5px;
-        margin: 50px 0;
+        margin: 70px 0;
     }
 
     .divider>p {
         font-size: 50px;
         line-height: 50px;
     }
-
 }
