@@ -1,4 +1,5 @@
-img#title {
+
+img#logo {
     max-width: 800px;
     padding: 20px 0;
 }
@@ -98,7 +99,7 @@ h3 {
 /* Mobile view */
 
 @media (max-width: 1000px) {
-    img#title {
+    img#logo {
         max-width: 95%;
         padding: 2.5% 0 60px 0;
     }
