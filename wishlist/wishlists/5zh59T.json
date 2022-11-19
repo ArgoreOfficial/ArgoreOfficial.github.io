@@ -3,7 +3,7 @@
 	"containers":
 	[
 		{
-			"name":"Vinyls",
+			"name":"Music",
 			"items":
 			[
 				{
@@ -47,6 +47,12 @@
 					"desc":"Heilung - Lifa Vinyl",
 					"link":"https://heilung.travelling-merchant.com/vinyl/heilung-lifa-heilung-live-at-castlefest-double-lp-gatefold-digital",
 					"price":"299kr"
+				},
+				{
+					"img":"https://f4.bcbits.com/img/0029710347_10.jpg",
+					"desc":"Keygen Church Cassette (on ebay, uncertain of legitimacy)",
+					"link":"https://www.ebay.com/itm/225235999511",
+					"price":"1590kr"
 				}
 			]
 		},

@@ -1,0 +1,124 @@
+img#title {
+    max-width: 800px;
+    padding: 20px 0;
+}
+
+/* Download button */
+
+#download {
+    display: flex;
+    width: 100vw;
+    padding: 0;
+    margin-bottom: 100px;
+    
+    justify-content: center;
+    align-self: center;
+}
+
+#download > a {
+    padding: 10px 50px;
+    background-color: #F28500;
+    text-decoration: none;
+    border-radius: 100vh;
+    
+    transition: background-color 200ms ease;
+}
+
+#download > a:hover {
+    background-color: #FFB238;
+}
+
+#download p {
+    font-size: 30pt;
+    margin: 5px 20px;
+    color: #121212;
+}
+
+h3 {
+    line-height: 0;
+}
+
+/* Containers */
+
+.container {
+    background-color: #212121;
+    padding: 0.25rem 1rem;
+    margin: 10px 0;
+}
+
+
+/* Mods */
+
+.featured_mods {
+    padding: 10px;
+    display: flex;
+}
+
+.mod_card {
+    background-color: white;
+    margin: 10px;
+    position: relative;
+    display: flex;
+    aspect-ratio: 4 / 3;
+
+    color:transparent;
+
+    transition: all ease 200ms;
+    font-size: 20pt;
+}
+
+.mod_card:hover {
+    color: white;
+    font-size: 21pt;
+}
+
+.mod_card > p {
+    color: inherit;
+    position: absolute;
+    
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    margin: 0.5rem 0;
+    line-height: 0;
+}
+
+.mod_card > img {
+    inline-size: 100%;
+    object-fit: cover;
+    transition: all ease 200ms;
+}
+
+.mod_card:hover > img {
+    filter: grayscale(80%) brightness(40%);
+}
+
+/* Mobile view */
+
+@media (max-width: 1000px) {
+    img#title {
+        max-width: 95%;
+        padding: 2.5% 0 60px 0;
+    }
+
+    h3 {
+        font-size: 30pt;
+    }
+
+    #download {
+        display: none;
+    }
+        
+    .featured_mods {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 80%;
+        overflow-x: auto;
+    }
+
+    .mod_card > p {
+        font-size: 40pt;
+    }
+}
