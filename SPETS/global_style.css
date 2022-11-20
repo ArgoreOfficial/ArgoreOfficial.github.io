@@ -61,6 +61,76 @@ nav {
 }
 
 
+/* Containers */
+
+.container {
+    min-height: 80px;
+    background-color: #212121;
+    padding: 0.25rem 1rem;
+    margin: 10px 0;
+}
+
+/* Mods */
+
+.mod_card {
+    background-color: white;
+    position: relative;
+    margin: 10px;
+    display: flex;
+    aspect-ratio: 4 / 3;
+    
+    color:transparent;
+    transition: all ease 200ms;
+}
+
+.mod_card:hover {
+    color: black;
+}
+
+.mod_card > h1, .mod_card > p {
+    white-space: pre-wrap;
+    color: inherit;
+    position: absolute;
+
+    width: 100%;
+    text-align: center;
+    bottom: 35%;
+    
+    transition: all ease-out 300ms;
+    margin: 0.5rem 0;    
+
+    transform: translateY(50%);
+}
+
+.mod_card > h1 {
+    font-size: 30pt;
+    font-weight: bolder;
+}
+
+.mod_card > .p {
+    font-size: 20pt;
+    bottom: 20%;
+}
+
+.mod_card:hover > h1 {
+    bottom: 50%;
+}
+
+.mod_card:hover > .p {
+    bottom: 30%;
+}
+
+.mod_card > img {
+    transition: all ease-out 100ms;
+    inline-size: 100%;
+    object-fit: cover;
+}
+
+.mod_card:hover > img {
+    filter: opacity(10%);
+}
+
+
 /* Mobile view */
 
 @media (max-width: 1000px) {
@@ -68,7 +138,7 @@ nav {
         padding-top: 0;
     }
     
-    header {
+    nav {
         top: auto;
         bottom: 0;
     }

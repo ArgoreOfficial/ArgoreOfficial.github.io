@@ -39,61 +39,12 @@ h3 {
     line-height: 0;
 }
 
-/* Containers */
-
-.container {
-    background-color: #212121;
-    padding: 0.25rem 1rem;
-    margin: 10px 0;
-}
-
 
 /* Mods */
 
 .featured_mods {
     padding: 10px;
     display: flex;
-}
-
-.mod_card {
-    background-color: white;
-    margin: 10px;
-    position: relative;
-    display: flex;
-    aspect-ratio: 4 / 3;
-
-    color:transparent;
-
-    transition: all ease 200ms;
-    font-size: 20pt;
-}
-
-.mod_card:hover {
-    color: white;
-    font-size: 21pt;
-}
-
-.mod_card > p {
-    color: inherit;
-    position: absolute;
-    
-    width: 100%;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    
-    margin: 0.5rem 0;
-    line-height: 0;
-}
-
-.mod_card > img {
-    inline-size: 100%;
-    object-fit: cover;
-    transition: all ease 200ms;
-}
-
-.mod_card:hover > img {
-    filter: grayscale(80%) brightness(40%);
 }
 
 /* Mobile view */
@@ -119,7 +70,12 @@ h3 {
         overflow-x: auto;
     }
 
-    .mod_card > p {
+    .mod_card > .mod_card_title {
+        font-size: 50pt;
+    }
+    
+    .mod_card > .mod_card_author {
         font-size: 40pt;
     }
+
 }
