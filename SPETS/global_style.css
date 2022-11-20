@@ -23,7 +23,7 @@ a {
 
 /* Header */
 
-header {
+nav {
     z-index: 1;
     background-color: #121212;
     display: flex;
