@@ -62,13 +62,14 @@ function addModCard(parentId, title, author, imagePath) {
 // Load mods
 var i = 0;
 while(true) {
-    if(checkFileExist('../dat_mods/' + i) == false) {
+    var metaFile = '../dat_mods/' + i + '/meta.json';
+    if(checkFileExist(metaFile) == false) {
         break;
     }
     else {
         // json file request
         var oReq = new XMLHttpRequest();
-        oReq.open("get", "../dat_mods/" + i + "/meta.json", false);
+        oReq.open("get", metaFile, false);
         oReq.send();
 
         var jsonData;
