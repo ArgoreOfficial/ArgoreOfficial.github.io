@@ -1,8 +1,10 @@
 {
-	"title":"Title",
-	"author":"Someone",
-	"description":"Description",
-	"mod_version":"1",
-	"game_version":"0.123",
-	"featured":"true"
+	"title":"DefaultTitle",
+	"author":"DefaultAuthor",
+	"description":
+	[
+		"DefaultDescription"
+	],
+	"categories":["stable_release", "experimental_release"],
+	"file":"./thumbnail.png"
 }

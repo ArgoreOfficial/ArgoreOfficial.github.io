@@ -12,17 +12,9 @@ function checkFileExist(urlToFile) {
     }
 }
 
-// listener
-var jsonData;
-function reqListener(modID) {
-  // parse json
-  jsonData = JSON.parse(this.responseText);
-  console.log('../dat/mods');
-  addModCard("stable_release", jsonData.title, jsonData.author, "../dat_mods/" + (i - 1) + "/thumbnail.png");
 
-};
-
-function addModCard(parentId, title, author, imagePath) {
+// adds mod card to category
+function addModCard(parentID, title, author, imagePath, modID) {
     /*
     <a href="">
         <div class="mod_card">
@@ -34,7 +26,7 @@ function addModCard(parentId, title, author, imagePath) {
     */
 
     let _a = document.createElement("a");
-    _a.href = "../Home";
+    _a.href = "../mod?v=" + modID;
 
     let _card = document.createElement("div");
     _card.className = "mod_card";
@@ -52,8 +44,11 @@ function addModCard(parentId, title, author, imagePath) {
     _card.appendChild(_title);
     _card.appendChild(_author);
     _a.appendChild(_card);
-    document.getElementById(parentId).appendChild(_a);
+
+    document.getElementById(parentID).appendChild(_a.cloneNode(true));
 }
+
+
 
 /* ----------------------------------------- */
 
@@ -72,10 +67,11 @@ while(true) {
         oReq.open("get", metaFile, false);
         oReq.send();
 
-        var jsonData;
         // parse json
-        jsonData = JSON.parse(oReq.responseText);
-        addModCard("stable_release", jsonData.title, jsonData.author, "../dat_mods/" + (i) + "/thumbnail_small.png");
+        var jsonData = JSON.parse(oReq.responseText);
+        for(let c in jsonData.categories) {
+            addModCard(jsonData.categories[c], jsonData.title, jsonData.author, "../dat_mods/" + (i) + "/thumbnail_small.png", i);
+        }
     }
     i++;
 }

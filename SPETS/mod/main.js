@@ -1,40 +1,30 @@
-// listener
-var jsonData;
-function reqListener () {
-  // parse json
-  jsonData = JSON.parse(this.responseText);
-  
-  for(var i = 0; i < jsonData.length; i++) {
-    var name = jsonData[i].name;
-    if (name.indexOf('r') > -1)
-    {
-        console.log("latest release: " + name)
-        
-        // download button text
-        document.getElementById("download_text").textContent = "DOWNLOAD " + name;
-
-        // download href
-        var href = name.replace(/\./g, "_");
-        document.getElementById("download_href").href = "https://github.com/ArgoreOfficial/SPETS/releases/download/" + name + "/" + href + ".zip"
-
-        break;
-    }
-  }
-};
-
-
-
 /* ----------------------------------------- */
 
 
 // get mod
-var modFolder = new URLSearchParams(location.search).getAll("m");
-if(modFolder == "") {
-  window.location = "../Explore/";
+var modID = new URLSearchParams(location.search).getAll("v");
+if(modID = " ") {
+  modID = "0"; // bruh why do i have to do this??? i hate html
 }
 
-// file request
+var metaFile = '../dat_mods/' + modID + '/meta.json';
+// json file request
 var oReq = new XMLHttpRequest();
-oReq.onload = reqListener;
-oReq.open("get", "./wishlists/" + fileName + ".json", true);
+oReq.open("get", metaFile, false);
 oReq.send();
+
+// parse json
+var jsonData = JSON.parse(oReq.responseText);
+
+document.getElementById("mod_title").textContent = jsonData.title;
+document.getElementById("mod_subtitle").textContent = jsonData.author;
+document.getElementById("mod_img").src = "../dat_mods/" + modID + "/thumbnail.png";
+document.getElementById("page_title").textContent = jsonData.title + " - SPETS Mods";
+
+for(let i in jsonData.description) {
+  console.log(jsonData.description[i]);
+  let _p = document.createElement("p");
+  _p.textContent = jsonData.description[i];
+
+  document.getElementById("mod_description_container").appendChild(_p);
+}

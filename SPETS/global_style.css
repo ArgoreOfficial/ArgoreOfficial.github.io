@@ -2,17 +2,21 @@
 
 * {
     font-family: 'Roboto', sans-serif;
-    color: #6B6B6B;
+    color: #CCCCCC;
 }
 
 body {    
     background-color: #1C1C1C;
-    padding-top: 50px;
+    padding: 50px 0 0 0;
     overflow-x: hidden;
 }    
 
 a {
     text-decoration: none;
+}
+
+h3 {
+    margin: 1rem 1rem 1rem 1rem;
 }
 
 .rel_center {
@@ -65,7 +69,7 @@ nav {
 
 .container {
     min-height: 80px;
-    background-color: #212121;
+    background-color: #303030;
     padding: 0.25rem 1rem;
     margin: 10px 0;
 }
@@ -80,7 +84,7 @@ nav {
     aspect-ratio: 4 / 3;
     
     color:transparent;
-    transition: all ease 200ms;
+
 }
 
 .mod_card:hover {
@@ -96,7 +100,7 @@ nav {
     text-align: center;
     bottom: 35%;
     
-    transition: all ease-out 300ms;
+    transition: bottom ease-out 200ms, color ease-out 200ms;
     margin: 0.5rem 0;    
 
     transform: translateY(50%);
@@ -107,7 +111,7 @@ nav {
     font-weight: bolder;
 }
 
-.mod_card > .p {
+.mod_card > p {
     font-size: 20pt;
     bottom: 20%;
 }
@@ -116,12 +120,12 @@ nav {
     bottom: 50%;
 }
 
-.mod_card:hover > .p {
+.mod_card:hover > p {
     bottom: 30%;
 }
 
 .mod_card > img {
-    transition: all ease-out 100ms;
+    transition: filter ease 200ms;
     inline-size: 100%;
     object-fit: cover;
 }
