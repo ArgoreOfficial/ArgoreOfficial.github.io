@@ -3,6 +3,24 @@
 	"containers":
 	[
 		{
+			"name":"Game Stuff",
+			"items":
+			[
+				{
+					"img":"https://www.elgiganten.se/image/dv_web_D180001002779378/336729/nintendo-switch-oled-gamingkonsol-med-vita-joy-con-kontroller--pdp_zoom-3000--pdp_main-960.jpg", 
+					"desc":"Nintendo Switch OLED",
+					"link":"https://www.elgiganten.se/product/gaming/spelkonsoler-tillbehor/nintendo-switch/nintendo-konsol/nintendo-switch-oled-gamingkonsol-med-vita-joy-con-kontroller/336729",
+					"price":"3989kr"
+				},
+				{
+					"img":"https://m.media-amazon.com/images/I/61dpejrmW9L._AC_SX679_.jpg", 
+					"desc":"8BitDo Ultimate Controller ",
+					"link":"https://www.amazon.se/dp/B0B9BGJVLL?ref_=cm_sw_r_cp_ud_dp_9J8AJKDXA9G64SB1626V",
+					"price":"795kr"
+				}
+			]
+		},
+		{
 			"name":"Music",
 			"items":
 			[
@@ -114,12 +132,6 @@
 			"name":"Misc",
 			"items":
 			[
-				{
-					"img":"https://m.media-amazon.com/images/I/61dpejrmW9L._AC_SX679_.jpg", 
-					"desc":"8BitDo Ultimate Controller ",
-					"link":"https://www.amazon.se/dp/B0B9BGJVLL?ref_=cm_sw_r_cp_ud_dp_9J8AJKDXA9G64SB1626V",
-					"price":"795kr"
-				},
 				{
 					"img":"https://www.shoppo.se/media/catalog/product/cache/2/image/800x/6b9ffbf72458f4fd2d3cb995d92e8889/k/l/klassisk-derby-gar-1242-1.jpg", 
 					"desc":"Mahogny cane since I can't fucking walk",
