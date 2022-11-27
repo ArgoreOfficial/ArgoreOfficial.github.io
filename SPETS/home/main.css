@@ -1,0 +1,77 @@
+
+img#logo {
+    max-width: 800px;
+    padding: 20px 0;
+}
+
+/* Download button */
+
+#download {
+    display: flex;
+    width: 100vw;
+    padding: 0;
+    margin-bottom: 100px;
+    
+    justify-content: center;
+    align-self: center;
+}
+
+#download > a {
+    padding: 10px 50px;
+    background-color: #F28500;
+    text-decoration: none;
+    border-radius: 100vh;
+    
+    transition: background-color 200ms ease;
+}
+
+#download > a:hover {
+    background-color: #FFB238;
+}
+
+#download p {
+    font-size: 30pt;
+    margin: 5px 20px;
+    color: #121212;
+}
+
+
+/* Mods */
+
+.featured_mods {
+    padding: 10px;
+    display: flex;
+}
+
+/* Mobile view */
+
+@media (max-width: 1000px) {
+    img#logo {
+        max-width: 95%;
+        padding: 2.5% 0 60px 0;
+    }
+
+    h3 {
+        font-size: 30pt;
+    }
+
+    #download {
+        display: none;
+    }
+        
+    .featured_mods {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 80%;
+        overflow-x: auto;
+    }
+
+    .mod_card > .mod_card_title {
+        font-size: 50pt;
+    }
+    
+    .mod_card > .mod_card_author {
+        font-size: 40pt;
+    }
+
+}
