@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
 }    
 
-a {
+a:not(.keep_decoration) {
     text-decoration: none;
 }
 
@@ -42,6 +42,15 @@ nav {
     width: 100vw;
 }
 
+#page_title {
+    text-align: center;
+}
+
+#page_title > h1 {
+    font-size: 5em;
+    margin: 0;
+}
+
 #header_center {
     display: grid;
     position: relative;
@@ -68,6 +77,8 @@ nav {
 /* Containers */
 
 .container {
+    position: relative;
+    overflow: auto;
     min-height: 80px;
     background-color: #303030;
     padding: 0.25rem 1rem;
@@ -88,7 +99,7 @@ nav {
 }
 
 .mod_card:hover {
-    color: black;
+    color: white;
 }
 
 .mod_card > h1, .mod_card > p {
@@ -131,7 +142,7 @@ nav {
 }
 
 .mod_card:hover > img {
-    filter: opacity(10%);
+    filter: brightness(40%);
 }
 
 

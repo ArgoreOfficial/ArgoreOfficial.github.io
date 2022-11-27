@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../global_style.css">
+    <link rel="stylesheet" href="../tutorial_style.css">
+    <link rel="icon" type="image/x-icon" href="../images/Icon.ico">
+
+    <title> Tutorials </title>
+
+    <!-- Embed -->
+    <title> SPETS Homepage </title>
+    <meta content="SPETS" property="og:title" />
+    <meta content="The Official SPETS Website" property="og:description" />
+    <meta content="https://argoreofficial.github.io/SPETS/Home/" property="og:url" />
+    <meta content="https://argoreofficial.github.io/SPETS/images/Icon.png" property="og:image" />
+    <meta content="#190613" data-react-helmet="true" name="theme-color" />
+
+</head>
+<body>
+    <!-- Nav bar -->
+    <nav>
+        <div id="header_center">
+            <a href="../home/"> <p> Home </p> </a>
+            <a href="../tutorials/"> <p> Tutorials </p></a>
+            <a href="../explore/"> <p> Explore </p> </a>
+            <a href="../help/"> <p> Help </p> </a>
+        </div>
+    </nav>
+
+    <div id="page_title">
+        <h1>Importing Tutorial</h1>
+        <p>In this tutorial we'll go through the basic steps of how to import a 3d model into Sprocket.</p>
+        <sup>note; some programs, such as Fusion360, have a different format on Wavefront files which SPETS don't support, so i strongly recommend you use blender</sup>
+    </div>
+    
+    <div class="container">
+        <h1>Preparing the model</h1>
+        <img class="sub_img" src="./importing_tutorial_image_1.png">
+        <img src="./importing_tutorial_animated_1.gif">
+        <p>The first step is to have a model. You can make one yourself in a program like <a href="https://www.blender.org/" class="keep_decoration">Blender</a> or download one online. For this tutorial i will be using the default blender cube.</p>
+        <sup>Note that one meter will equal one meter in Sprocket later.</sup>
+        <br>
+        <br>
+        <p>It is recommended to tesselate the model before exporting to prevent any potentional error within SPETS.</p> 
+        <p>In blender this can be done by using a Triangulate modifier. For best result, set Minimum Vertices to 5. Then press Apply.</p>
+        
+    </div>
+
+    <div class="container">
+        <h1>Exporting</h1>
+        <img src="./importing_tutorial_animated_2.gif">
+        <p>Now export the model as a Wavefront(.obj) file. You can uncheck "Materials" as we won't be needing that.</p>
+    </div>
+
+    <div class="container">
+        <h1>Importing using SPETS</h1>
+        <img src="./importing_tutorial_animated_3.gif">
+        <p>Now if you haven't already, <a href="../../home" class="keep_decoration">download SPETS</a>.</p>
+        <p>Open SPETS.exe and select "Import from OBJ" from the dropdown. Click Load and select your exported .obj file.</p>
+        <p>A new window should now have popped up. Select the faction you want to model in, if you're uncertain choose Default. Press Import and wait for it to finish loading. Your model might take longer to import depending on the file size.</p>
+    </div>
+
+    <div class="container">
+        <h1>Loading the compartment</h1>
+        <img src="./importing_tutorial_animated_4.gif">
+        <p>Now it's time to fire up Sprocket. Make sure you're in the correct faction and load the compartment. To import a turret, place a freemform turret on your vehicle and load the compartment from there.</p>
+        <p>The model should now have appeared in game, wohoo!</p>
+        <p>You can now manipulate it as you would any other Freeform tank.</p>
+    </div>
+
+</body>
+</html>

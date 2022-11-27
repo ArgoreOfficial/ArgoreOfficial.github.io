@@ -1,0 +1,28 @@
+img {
+    width: 50%;
+    clear: both;
+    float: right;
+    margin: 10px;
+}
+
+.sub_img {
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+
+/* Mobile view */
+
+@media (max-width: 1000px) {
+    img {
+        width: 100%;
+    }
+
+    .sub_img {
+        display: none;
+    }
+}

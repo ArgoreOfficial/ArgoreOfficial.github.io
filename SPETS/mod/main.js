@@ -4,7 +4,7 @@
 // get mod
 var modID = new URLSearchParams(location.search).getAll("v");
 if(modID = " ") {
-  modID = "0"; // bruh why do i have to do this??? i hate html
+  modID = "1"; // bruh why do i have to do this??? i hate html
 }
 
 var metaFile = '../dat_mods/' + modID + '/meta.json';
@@ -17,10 +17,12 @@ oReq.send();
 var jsonData = JSON.parse(oReq.responseText);
 
 document.getElementById("mod_title").textContent = jsonData.title;
-document.getElementById("mod_subtitle").textContent = jsonData.author;
+document.getElementById("mod_subtitle").textContent = "By " + jsonData.author;
 document.getElementById("mod_img").src = "../dat_mods/" + modID + "/thumbnail.png";
 document.getElementById("page_title").textContent = jsonData.title + " - SPETS Mods";
+document.getElementById("mod_download_href").href = jsonData.file;
 
+// add description
 for(let i in jsonData.description) {
   console.log(jsonData.description[i]);
   let _p = document.createElement("p");

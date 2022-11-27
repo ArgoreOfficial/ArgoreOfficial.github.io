@@ -1,0 +1,24 @@
+
+
+#tutorial_nav {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+#tutorial_button {
+    background-color: #121212;
+    font-size: xx-large;
+    padding: 10px;
+    margin: 1%;
+    width: 100%;
+    transition: background-color 200ms ease;
+    border-radius: 0.5em;
+    
+}
+
+#tutorial_button:hover {
+    background-color: #212121;
+}
+
