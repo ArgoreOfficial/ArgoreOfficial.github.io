@@ -26,7 +26,7 @@ function addModCard(parentID, title, author, imagePath, modID) {
     */
 
     let _a = document.createElement("a");
-    _a.href = "../mod?v=" + modID;
+    _a.href = "../mod/?v=" + modID;
 
     let _card = document.createElement("div");
     _card.className = "mod_card";
@@ -52,7 +52,11 @@ function addModCard(parentID, title, author, imagePath, modID) {
 
 /* ----------------------------------------- */
 
-
+// if this runs, everything is loaded
+var root = document.querySelector(':root');
+root.style.setProperty('--display', 'block');
+root.style.setProperty('--display_grid', 'grid');
+root.style.setProperty('--display_error', 'none');
 
 // Load mods
 var i = 0;

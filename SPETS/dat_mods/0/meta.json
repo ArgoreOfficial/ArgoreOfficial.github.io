@@ -1,10 +1,11 @@
 {
-	"title":"DefaultTitle",
-	"author":"DefaultAuthor",
+	"title":"SPETS",
+	"author":"Argore",
 	"description":
 	[
-		"DefaultDescription"
+		" ---- [ ALTERNATIVE PAGE - GET DIRECT DOWNLOAD FROM HOMEPAGE ] ----",
+		"A a collection of tools derived from my older projects, SMC and SprocketToolkit, for Sprocket."
 	],
-	"categories":["stable_release", "experimental_release"],
-	"file":"./thumbnail.png"
+	"categories":["other_mods"],
+	"file":"https://github.com/ArgoreOfficial/SPETS/releases/latest"
 }

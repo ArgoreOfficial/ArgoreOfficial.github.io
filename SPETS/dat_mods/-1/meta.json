@@ -1,0 +1,10 @@
+{
+	"title":"DefaultTitle",
+	"author":"DefaultAuthor",
+	"description":
+	[
+		"DefaultDescription"
+	],
+	"categories":["stable_release", "experimental_release"],
+	"file":"./thumbnail.png"
+}

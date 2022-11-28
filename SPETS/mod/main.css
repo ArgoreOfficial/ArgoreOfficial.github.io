@@ -62,4 +62,8 @@ body {
     #mod_download {
         display: none;
     }
+
+    #mod_img {
+        height: 400px;
+    }
 }

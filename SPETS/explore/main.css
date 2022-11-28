@@ -1,15 +1,34 @@
+:root {
+    --display: none;
+    --display_grid: none;
+    --display_error: block;
+}
+
+h3 {
+    display: var(--display);
+}
+
+#error_no_js {
+    display: var(--display_error);
+    text-align: center;
+    background-color: red;
+}
+
+#error_no_js>h1 {
+    line-height: 3em;
+    color: black;
+}
 
 .mods_container {
+    display: var(--display_grid) !important;
     padding: 10px;
-    display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 16%;
-
+    
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-behavior: auto;
 }
-
 
 /* Mobile*/
 

@@ -3,11 +3,9 @@
 
 // get mod
 var modID = new URLSearchParams(location.search).getAll("v");
-if(modID = " ") {
-  modID = "1"; // bruh why do i have to do this??? i hate html
-}
 
-var metaFile = '../dat_mods/' + modID + '/meta.json';
+var metaFile = "../dat_mods/" + modID + "/meta.json";
+console.log(metaFile);
 // json file request
 var oReq = new XMLHttpRequest();
 oReq.open("get", metaFile, false);

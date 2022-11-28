@@ -7,9 +7,23 @@
 
 body {    
     background-color: #1C1C1C;
-    padding: 50px 0 0 0;
     overflow-x: hidden;
-}    
+    margin: 0;
+}
+
+nav {
+    z-index: 1;
+    background-color: #121212;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+}
 
 a:not(.keep_decoration) {
     text-decoration: none;
@@ -23,23 +37,6 @@ h3 {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-}
-
-/* Header */
-
-nav {
-    z-index: 1;
-    background-color: #121212;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    
-    position: fixed;
-    top: 0;
-    left: 0;
-
-
-    width: 100vw;
 }
 
 #page_title {
@@ -82,7 +79,7 @@ nav {
     min-height: 80px;
     background-color: #303030;
     padding: 0.25rem 1rem;
-    margin: 10px 0;
+    margin: 15px 10px;
 }
 
 /* Mods */
@@ -118,12 +115,12 @@ nav {
 }
 
 .mod_card > h1 {
-    font-size: 30pt;
+    font-size: 2.5vw;
     font-weight: bolder;
 }
 
 .mod_card > p {
-    font-size: 20pt;
+    font-size: 1.5vw;
     bottom: 20%;
 }
 
@@ -152,11 +149,6 @@ nav {
     body {
         padding-top: 0;
     }
-    
-    nav {
-        top: auto;
-        bottom: 0;
-    }
 
     #header_center > a {
         line-height: 2rem;
@@ -166,4 +158,15 @@ nav {
     .container > p {
         font-size: 20pt;
     }
+
+    .mod_card > h1 {
+        font-size: 6.5vw;
+        font-weight: bolder;
+    }
+    
+    .mod_card > p {
+        font-size: 3.5vw;
+        bottom: 20%;
+    }
+    
 }

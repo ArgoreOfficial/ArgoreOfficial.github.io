@@ -1,19 +1,17 @@
 img {
+    width: 100%;
+}
+
+.container {
     width: 50%;
-    clear: both;
-    float: right;
-    margin: 10px;
+    margin: 10px auto;
 }
 
-.sub_img {
-    width: auto;
-    height: auto;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+.container > p {
+    font-size: large;
+    align-content: space-between;
+    align-items: center;
 }
-
-
 
 /* Mobile view */
 
