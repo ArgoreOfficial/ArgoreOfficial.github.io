@@ -31,22 +31,28 @@
 			"items":
 			[
 				{
-					"img":"https://merchbar.imgix.net/product/vinylized/upc/85/814867028509.jpg?auto=format&fit=max&w=750", 
-					"desc":"Lemon Demon - Spirit Phone Vinyl",
-					"link":"https://www.merchbar.com/pop/lemon-demon/lemon-demon-spirit-phone-vinyl-record",
-					"price":"579kr"
-				},
-				{
 					"img":"https://merchbar.imgix.net/product/crop/1616/2439746/QATK9D-1660588262-4000x4000-1660588252-418467029703%20(1).jpg?auto=format&fit=max&w=750", 
 					"desc":"Bo Burnham - Inside Vinyl Box Set",
 					"link":"https://www.merchbar.com/pop/bo-burnham/bo-burnham-inside-vinyl-record",
 					"price":"1203kr"
 				},
 				{
-					"img":"https://merchbar.imgix.net/product/vinylized/upc/43/804297824314.jpg?auto=format&fit=max&w=750", 
-					"desc":"C148 - Minecraft Volume Alpha Vinyl",
-					"link":"https://www.merchbar.com/dance-electronic-edm/c418/c418-minecraft-volume-alpha-vinyl-record",
-					"price":"240kr"
+					"img":"https://www.needlejuicerecords.com/wp-content/uploads/2018/07/Lemon-Demon-Spirit-Phone.png", 
+					"desc":"Lemon Demon - Spirit Phone Vinyl",
+					"link":"https://www.merchbar.com/pop/lemon-demon/lemon-demon-spirit-phone-vinyl-recordhttps://needlejuicerecords.com/product/spiritphone/",
+					"price":"372kr"
+				},
+				{
+					"img":"https://www.needlejuicerecords.com/wp-content/uploads/2022/08/GoodandEvil1000.jpg", 
+					"desc":"Tally Hall – Good & Evil Vinyl",
+					"link":"https://needlejuicerecords.com/product/goodandevil/",
+					"price":"372kr"
+				},
+				{
+					"img":"https://www.needlejuicerecords.com/wp-content/uploads/2021/02/Marvins-1000.jpg", 
+					"desc":"Tally Hall – Marvin’s Marvelous Mechanical Museum Vinyl",
+					"link":"https://needlejuicerecords.com/product/marvinsmarvelousmechanicalmuseum/",
+					"price":"372kr"
 				},
 				{
 					"img":"https://cdn.travelling-merchant.com/media/catalog/product/cache/2/small_image/9df78eab33525d08d6e5fb8d27136e95/H/e/Heilung-Drif-DOUBLE-LP-GATEFOLD-COLOURED-123321-1-1655118233_1.jpg", 
