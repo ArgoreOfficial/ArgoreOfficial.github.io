@@ -13,8 +13,14 @@
 					"price":"3989kr"
 				},
 				{
+					"img":"https://cdn.cloudflare.steamstatic.com/steamdeck/images/ver2/overview3options.png", 
+					"desc":"Basically a Nintendo, but a lot more powerful and can run most games on steam",
+					"link":"https://www.steamdeck.com/en/",
+					"price":"4580 - 7423kr"
+				},
+				{
 					"img":"https://m.media-amazon.com/images/I/61dpejrmW9L._AC_SX679_.jpg", 
-					"desc":"8BitDo Ultimate Controller ",
+					"desc":"8BitDo Ultimate Controller",
 					"link":"https://www.amazon.se/dp/B0B9BGJVLL?ref_=cm_sw_r_cp_ud_dp_9J8AJKDXA9G64SB1626V",
 					"price":"795kr"
 				}
