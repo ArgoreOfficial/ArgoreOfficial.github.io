@@ -31,16 +31,22 @@
 			"items":
 			[
 				{
+					"img":"https://www.needlejuicerecords.com/wp-content/uploads/2022/08/GoodandEvil1000.jpg", 
+					"desc":"Tally Hall – Good & Evil Vinyl",
+					"link":"https://needlejuicerecords.com/product/goodandevil/",
+					"price":"372kr"
+				},
+				{
 					"img":"https://merchbar.imgix.net/product/crop/1616/2439746/QATK9D-1660588262-4000x4000-1660588252-418467029703%20(1).jpg?auto=format&fit=max&w=750", 
 					"desc":"Bo Burnham - Inside Vinyl Box Set",
 					"link":"https://www.merchbar.com/pop/bo-burnham/bo-burnham-inside-vinyl-record",
 					"price":"1203kr"
 				},
 				{
-					"img":"https://www.needlejuicerecords.com/wp-content/uploads/2022/08/GoodandEvil1000.jpg", 
-					"desc":"Tally Hall – Good & Evil Vinyl",
-					"link":"https://needlejuicerecords.com/product/goodandevil/",
-					"price":"372kr"
+					"img":"https://cdn.travelling-merchant.com/media/catalog/product/cache/2/small_image/9df78eab33525d08d6e5fb8d27136e95/H/e/Heilung-Ofnir-DOUBLE-LP-Gatefold-66263-1_1.jpg", 
+					"desc":"Heilung - Ofnir Vinyl",
+					"link":"https://heilung.travelling-merchant.com/vinyl/heilung-ofnir-double-lp-gatefold-digital",
+					"price":"267kr"
 				},
 				{
 					"img":"https://cdn.travelling-merchant.com/media/catalog/product/cache/2/small_image/9df78eab33525d08d6e5fb8d27136e95/H/e/Heilung-Drif-DOUBLE-LP-GATEFOLD-COLOURED-123321-1-1655118233_1.jpg", 
@@ -55,16 +61,16 @@
 					"price":"299kr"
 				},
 				{
-					"img":"https://cdn.travelling-merchant.com/media/catalog/product/cache/2/small_image/9df78eab33525d08d6e5fb8d27136e95/H/e/Heilung-Ofnir-DOUBLE-LP-Gatefold-66263-1_1.jpg", 
-					"desc":"Heilung - Ofnir Vinyl",
-					"link":"https://heilung.travelling-merchant.com/vinyl/heilung-ofnir-double-lp-gatefold-digital",
-					"price":"267kr"
-				},
-				{
 					"img":"https://cdn.travelling-merchant.com/media/catalog/product/cache/2/small_image/9df78eab33525d08d6e5fb8d27136e95/H/e/Heilung-Lifa-Heilung-Live-at-Castlefest-DOUBLE-LP-Gatefold-66317-1_2.jpg", 
 					"desc":"Heilung - Lifa Vinyl",
 					"link":"https://heilung.travelling-merchant.com/vinyl/heilung-lifa-heilung-live-at-castlefest-double-lp-gatefold-digital",
 					"price":"299kr"
+				},
+				{
+					"img":"https://merchbar.imgix.net/product/vinylized/upc/88/4988008088113.jpg?auto=format&fit=max&w=750",
+					"desc":"Howl's Moving Castle Vinyl",
+					"link":"https://www.merchbar.com/jazz-blues/joe-hisaishi/joe-hisaishi-howl-s-moving-castle-image-symphonic-suite-vinyl-record",
+					"price":"774kr"
 				},
 				{
 					"img":"https://f4.bcbits.com/img/0029710347_10.jpg",
@@ -73,10 +79,10 @@
 					"price":"1590kr"
 				},
 				{
-					"img":"https://merchbar.imgix.net/product/vinylized/upc/88/4988008088113.jpg?auto=format&fit=max&w=750",
-					"desc":"Howl's Moving Castle Vinyl",
-					"link":"https://www.merchbar.com/jazz-blues/joe-hisaishi/joe-hisaishi-howl-s-moving-castle-image-symphonic-suite-vinyl-record",
-					"price":"774kr"
+					"img":"https://www.say-10.com/wp-content/uploads/2020/06/say080.jpg",
+					"desc":"Will Wood - The Normal Album",
+					"link":"https://www.say-10.com/store/will-wood-the-normal-album/",
+					"price":"259kr"
 				}
 			]
 		},
