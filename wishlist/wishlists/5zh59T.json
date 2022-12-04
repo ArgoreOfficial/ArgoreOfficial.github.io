@@ -8,7 +8,7 @@
 			[
 				{
 					"img":"https://cdn.cloudflare.steamstatic.com/steamdeck/images/ver2/overview3options.png", 
-					"desc":"THE best handheld console on the market",
+					"desc":"Steamdeck. THE best handheld console on the market",
 					"link":"https://www.steamdeck.com/en/",
 					"price":"4580 - 7423kr"
 				},
@@ -17,6 +17,12 @@
 					"desc":"8BitDo Ultimate Controller",
 					"link":"https://www.amazon.se/dp/B0B9BGJVLL?ref_=cm_sw_r_cp_ud_dp_9J8AJKDXA9G64SB1626V",
 					"price":"795kr"
+				},
+				{
+					"img":"https://cdn.shopify.com/s/files/1/0321/7516/1479/products/2_a5d346a0-17a8-4699-8f46-e857424d87da_1024x1024@2x.jpg?v=1667899004", 
+					"desc":"Retroid Pocket 3+",
+					"link":"https://www.goretroid.com/collections/frontpage/products/retroid-pocket-3-handheld-retro-gaming-system-1?variant=43622670729440",
+					"price":"1590kr"
 				}
 			]
 		},
