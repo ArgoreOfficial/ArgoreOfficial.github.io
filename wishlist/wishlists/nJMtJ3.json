@@ -3,14 +3,38 @@
 	"containers":
 	[
 		{
-			"name":"",
+			"name":"Smycken",
 			"items":
 			[
 				{
-					"img":"", 
+					"img":"https://glitter.se/img/bilder/artiklar/zoom/553001631000_3.jpg?m=1669805053&w=72", 
 					"desc":"",
-					"link":"",
-					"price":""
+					"link":"https://glitter.se/sv/hoops-i-akta-silver-med-chunky-design",
+					"price":"399kr"
+				},
+				{
+					"img":"https://glitter.se/img/bilder/artiklar/zoom/553001280200_1.jpg?m=1666873877&w=72", 
+					"desc":"",
+					"link":"https://glitter.se/sv/orhangen-i-akta-silver-med-rektangulara-stenar",
+					"price":"149kr"
+				},
+				{
+					"img":"https://glitter.se/img/bilder/artiklar/zoom/553001541000_1.jpg?m=1663757774&w=72", 
+					"desc":"",
+					"link":"https://glitter.se/sv/mix-orhangen-i-akta-silver-med-stud-och-tagg",
+					"price":"199kr"
+				},
+				{
+					"img":"https://glitter.se/img/bilder/artiklar/zoom/553001141000_2.jpg?m=1662466608&w=72", 
+					"desc":"",
+					"link":"https://glitter.se/sv/mini-hoops-i-akta-silver-med-cubic-zirconia",
+					"price":"199kr"
+				},
+				{
+					"img":"https://glitter.se/img/bilder/artiklar/zoom/327591011000_1.jpg?m=1616160008&w=72", 
+					"desc":"",
+					"link":"https://glitter.se/sv/creoler-med-kors-i-akta-silver",
+					"price":"249kr"
 				}
 			]
 		}
