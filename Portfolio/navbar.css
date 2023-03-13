@@ -1,0 +1,95 @@
+@keyframes shake {
+    0% { transform: translate(1px, 1px) }
+    10% { transform: translate(-1px, -1px) }
+    20% { transform: translate(-1px, 0px) }
+    30% { transform: translate(1px, 1px) }
+    40% { transform: translate(1px, -1px) }
+    50% { transform: translate(-1px, 1px) }
+    60% { transform: translate(-1px, 1px) }
+    70% { transform: translate(1px, 1px) }
+    80% { transform: translate(-1px, -1px) }
+    90% { transform: translate(1px, 1px) }
+    100% { transform: translate(1px, -1px) }
+}
+
+nav {
+    background: red;
+    
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+    gap: 40px;
+
+    position: fixed;
+    top: 1%;
+    padding: 10px;
+
+    height: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav > div {
+    position: relative;
+}
+
+
+nav > .asleep {
+    transition: top 0.6s ease; 
+    top: -50%;
+}
+
+nav > .awake {
+    transition: all 2s cubic-bezier(0.7, 0, 0.84, 0);    
+    top: 100vh;
+}
+
+nav.enabled > .asleep:hover {
+    top: -40%;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+/* Fella */
+
+nav > div > .body {
+    background-image: url("./images/fella.png");
+    background-size: cover;
+    
+    aspect-ratio: 104 / 109;
+    width: calc(104px * 2);
+
+}
+
+nav > div > .back {
+    background-image: url("./images/fella_back.png");
+    background-size: contain;
+    
+    width: 208px;
+    height: 120vh;
+
+    position: absolute;
+    top: -120vh;
+}
+
+/* Fella Face */
+
+nav > div > .face {
+    background-image: url("./images/fella_sleep.png");
+    background-size: cover;
+
+    width: 84px;
+    height: 28px;
+
+    position: absolute;
+    left: 56px;
+    top: 132px;
+}
+
+nav.enabled > .asleep:hover > .face {
+    background-image: url("./images/fella_surprise.png");
+}
+
+nav > .awake > .face {
+    background-image: url("./images/fella_awake.png");
+}

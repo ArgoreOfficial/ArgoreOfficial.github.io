@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./navbar.css" />
+    
+    <script src="./main.js"></script>
+    <script src="./navbar.js"></script>
 
     <title>Home</title>
 </head>
 <body>
-    <nav>
-        <div id="button_home" onclick="setTimeout(function(){document.getElementById('button_home').style.backgroundColor=('red'); console.log('wee')}, 2000);">
-            <p> YIPEE </p>
+    <nav id="navbar" class="enabled">
+        <div id="button_home" class="asleep" onclick="nav_button_click('button_home', './')">
+            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
         </div>
-        <div>
-            <p> YIPEE </p>
+        <div id="button_about" class="asleep" onclick="nav_button_click('button_about', './')">
+            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
         </div>
-        <div>
-            <p> YIPEE </p>
+        <div id="button_projects" class="asleep" onclick="nav_button_click('button_projects', './')">
+            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
         </div>
-        <div>
-            <p> YIPEE </p>
+        <div id="button_contact" class="asleep" onclick="nav_button_click('button_contact', './')"> 
+            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
         </div>
     </nav>
     

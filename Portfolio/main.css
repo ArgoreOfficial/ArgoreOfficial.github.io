@@ -1,46 +1,9 @@
+
+
 body {
-    background-image: url("./wood_background.jpg");
     height: 3000px;
     width: auto;
-}
-
-nav {
-    background: red;
-    
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    text-align: center;
-    gap: 20px;
-
-    position: sticky;
-    top: 10px;
-    padding: 10px;
-
-    width: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-nav > div {
-    top: 0;
-    position: relative;
-    background-color: yellowgreen;
-    height: 100%;
-    transition: all 0.6s ease; 
-}
-
-nav > div:hover {
-    background-color: greenyellow;
-    height: 200%;
-}
-
-
-nav > div > p {
-    transition: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6); 
-    position: relative;
-    top: -100px;
-}
-
-nav > div:hover > p {
-    top: 0;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
