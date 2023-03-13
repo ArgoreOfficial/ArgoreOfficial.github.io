@@ -1,0 +1,15 @@
+body {
+    display: inline-block;
+}
+
+#output_config>input {
+    width: 5rem;
+}
+
+#display_image {
+    height: 256px;
+    width: 256px;
+    border: 1px solid black;
+    
+    image-rendering: pixelated;
+}
