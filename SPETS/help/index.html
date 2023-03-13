@@ -27,5 +27,22 @@
             <a href="../help/"> <p> Help </p> </a>
         </div>
     </nav>
+
+    <h1 id="page_title"> Common SPETS Issues </h1>
+    <div class="container">
+        <h1> Missing .NET Core </h1>
+        <img src="https://cdn.discordapp.com/attachments/966774739538427944/1029327054736457819/unknown.png">
+        <p> 
+            If you're getting this error and pressing Yes does not work, 
+            <a class="keep_decoration" href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-3.1.29-windows-x64-installer"> download and install the .NET Core 3.1 Runtime here </a>
+        </p>
+        <p> This error is because SPETS requires .NET Core 3.1, which may not be installed on every computer</p>
+    </div>
+    <div class="container">
+        <h1> Missing Faces </h1>
+        <img src="https://cdn.discordapp.com/attachments/966774739538427944/967028411509932032/unknown.png">
+        <p>If your imported creation is missing faces like the image above, your model is containing faces with more than 5 vertices (points). To fix this you need to triangulate your model down to at least quads.</p>
+        <p>The <a class="keep_decoration" href="../tutorials/importing-tutorial/">Importing Tutorial</a> covers how to do it in blender. </p>
+    </div>
 </body>
 </html>
