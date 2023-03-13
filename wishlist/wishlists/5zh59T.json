@@ -13,12 +13,6 @@
 					"price":"4580 - 7423kr"
 				},
 				{
-					"img":"https://m.media-amazon.com/images/I/61dpejrmW9L._AC_SX679_.jpg", 
-					"desc":"8BitDo Ultimate Controller",
-					"link":"https://www.amazon.se/dp/B0B9BGJVLL?ref_=cm_sw_r_cp_ud_dp_9J8AJKDXA9G64SB1626V",
-					"price":"795kr"
-				},
-				{
 					"img":"https://cdn.shopify.com/s/files/1/0321/7516/1479/products/2_a5d346a0-17a8-4699-8f46-e857424d87da_1024x1024@2x.jpg?v=1667899004", 
 					"desc":"Retroid Pocket 3+",
 					"link":"https://www.goretroid.com/collections/frontpage/products/retroid-pocket-3-handheld-retro-gaming-system-1",
@@ -61,12 +55,6 @@
 					"price":"299kr"
 				},
 				{
-					"img":"https://cdn.travelling-merchant.com/media/catalog/product/cache/2/small_image/9df78eab33525d08d6e5fb8d27136e95/H/e/Heilung-Lifa-Heilung-Live-at-Castlefest-DOUBLE-LP-Gatefold-66317-1_2.jpg", 
-					"desc":"Heilung - Lifa Vinyl",
-					"link":"https://heilung.travelling-merchant.com/vinyl/heilung-lifa-heilung-live-at-castlefest-double-lp-gatefold-digital",
-					"price":"299kr"
-				},
-				{
 					"img":"https://merchbar.imgix.net/product/vinylized/upc/88/4988008088113.jpg?auto=format&fit=max&w=750",
 					"desc":"Howl's Moving Castle Vinyl",
 					"link":"https://www.merchbar.com/jazz-blues/joe-hisaishi/joe-hisaishi-howl-s-moving-castle-image-symphonic-suite-vinyl-record",
@@ -77,12 +65,6 @@
 					"desc":"Keygen Church Cassette (on ebay, uncertain of legitimacy)",
 					"link":"https://www.ebay.com/itm/225235999511",
 					"price":"1590kr"
-				},
-				{
-					"img":"https://www.say-10.com/wp-content/uploads/2020/06/say080.jpg",
-					"desc":"Will Wood - The Normal Album",
-					"link":"https://www.say-10.com/store/will-wood-the-normal-album/",
-					"price":"259kr"
 				}
 			]
 		},
@@ -121,12 +103,6 @@
 					"price":"2363kr+"
 				},
 				{
-					"img":"https://img.brickowl.com/files/image_cache/large/lego-gateway-of-the-squid-set-8061-4.jpg", 
-					"desc":"Lego Atlantis",
-					"link":"https://www.brickowl.com/catalog/lego-gateway-of-the-squid-set-8061",
-					"price":"273kr+"
-				},
-				{
 					"img":"https://img.brickowl.com/files/image_cache/large/lego-angler-attack-set-7978-15.jpg", 
 					"desc":"Lego Atlantis",
 					"link":"https://www.brickowl.com/catalog/lego-angler-attack-set-7978",
@@ -139,14 +115,8 @@
 			"items":
 			[
 				{
-					"img":"https://www.shoppo.se/media/catalog/product/cache/2/image/800x/6b9ffbf72458f4fd2d3cb995d92e8889/k/l/klassisk-derby-gar-1242-1.jpg", 
-					"desc":"Mahogny cane since I can't fucking walk",
-					"link":"https://www.shoppo.se/trakapp-derby-mahogny-gar-1242",
-					"price":"555kr"
-				},
-				{
 					"img":"https://vangogh.teespring.com/v3/image/vNjxb-Kyh_fMmCcgDzrh35CXfh8/800/800.jpg", 
-					"desc":"A mug my friend designed :)",
+					"desc":"i want drink the chocolat :)",
 					"link":"https://easygoinggoth.creator-spring.com/listing/bubble-cat-mug?product=1637",
 					"price":"141kr"
 				}
