@@ -5,31 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./main.css" />
-    <link rel="stylesheet" href="./navbar.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
     
-    <script src="./main.js"></script>
-    <script src="./navbar.js"></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/navbar.js" defer></script>
 
     <title>Home</title>
 </head>
 <body>
+    
     <nav id="navbar" class="enabled">
         <div id="button_home" class="asleep" onclick="nav_button_click('button_home', './')">
             <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
         </div>
-        <div id="button_about" class="asleep" onclick="nav_button_click('button_about', './')">
+        <div id="button_about" class="asleep" onclick="nav_button_click('button_about', './about')">
             <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
         </div>
-        <div id="button_projects" class="asleep" onclick="nav_button_click('button_projects', './')">
+        <div id="button_projects" class="asleep" onclick="nav_button_click('button_projects', './projects')">
             <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
         </div>
-        <div id="button_contact" class="asleep" onclick="nav_button_click('button_contact', './')"> 
+        <div id="button_contact" class="asleep" onclick="nav_button_click('button_contact', './contact')"> 
             <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
         </div>
     </nav>
-    
-    <h1> Pi </h1>
+
+    <div id="pageroot"></div>
 
 </body>
 </html>

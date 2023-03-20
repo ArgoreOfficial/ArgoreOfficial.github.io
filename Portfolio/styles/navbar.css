@@ -27,6 +27,8 @@ nav {
     height: 5%;
     left: 50%;
     transform: translateX(-50%);
+
+    transition: top 700ms ease;
 }
 
 nav > div {
@@ -40,7 +42,7 @@ nav > .asleep {
 }
 
 nav > .awake {
-    transition: all 2s cubic-bezier(0.7, 0, 0.84, 0);    
+    transition: top 2s cubic-bezier(0.7, 0, 0.84, 0);    
     top: 100vh;
 }
 
@@ -53,7 +55,7 @@ nav.enabled > .asleep:hover {
 /* Fella */
 
 nav > div > .body {
-    background-image: url("./images/fella.png");
+    background-image: url("../images/fella.png");
     background-size: cover;
     
     aspect-ratio: 104 / 109;
@@ -62,7 +64,7 @@ nav > div > .body {
 }
 
 nav > div > .back {
-    background-image: url("./images/fella_back.png");
+    background-image: url("../images/fella_back.png");
     background-size: contain;
     
     width: 208px;
@@ -75,7 +77,7 @@ nav > div > .back {
 /* Fella Face */
 
 nav > div > .face {
-    background-image: url("./images/fella_sleep.png");
+    background-image: url("../images/fella_sleep.png");
     background-size: cover;
 
     width: 84px;
@@ -87,9 +89,9 @@ nav > div > .face {
 }
 
 nav.enabled > .asleep:hover > .face {
-    background-image: url("./images/fella_surprise.png");
+    background-image: url("../images/fella_surprise.png");
 }
 
 nav > .awake > .face {
-    background-image: url("./images/fella_awake.png");
+    background-image: url("../images/fella_awake.png");
 }
