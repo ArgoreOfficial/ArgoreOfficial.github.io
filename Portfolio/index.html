@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/ajax.css" />
     
     <script src="./js/main.js" defer></script>
     <script src="./js/navbar.js" defer></script>
@@ -14,23 +15,21 @@
     <title>Home</title>
 </head>
 <body>
+    <div id="pageroot"></div>
     
     <nav id="navbar" class="enabled">
-        <div id="button_home" class="asleep" onclick="nav_button_click('button_home', './')">
-            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
+        <div id="button_home" class="asleep shakeonhover" onclick="nav_button_click('button_home', './ajax/home.html')">
+            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div> <div class="text"> </div>
         </div>
-        <div id="button_about" class="asleep" onclick="nav_button_click('button_about', './about')">
-            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
+        <div id="button_about" class="asleep shakeonhover" onclick="nav_button_click('button_about', './ajax/about.html')">
+            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div> <div class="text"> </div>
         </div>
-        <div id="button_projects" class="asleep" onclick="nav_button_click('button_projects', './projects')">
-            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
+        <div id="button_projects" class="asleep shakeonhover" onclick="nav_button_click('button_projects', './ajax/projects.html')">
+            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div> <div class="text"> </div>
         </div>
-        <div id="button_contact" class="asleep" onclick="nav_button_click('button_contact', './contact')"> 
-            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div>
+        <div id="button_contact" class="asleep shakeonhover" onclick="nav_button_click('button_contact', './ajax/contact.html')"> 
+            <div class="body"> </div> <div class="back"> </div> <div class="face"> </div> <div class="text"> </div>
         </div>
     </nav>
-
-    <div id="pageroot"></div>
-
 </body>
 </html>

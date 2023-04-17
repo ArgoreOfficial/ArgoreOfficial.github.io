@@ -1,9 +1,31 @@
-
+@keyframes shake {
+    0% { transform: translate(1px, 1px) }
+    10% { transform: translate(-1px, -1px) }
+    20% { transform: translate(-1px, 0px) }
+    30% { transform: translate(1px, 1px) }
+    40% { transform: translate(1px, -1px) }
+    50% { transform: translate(-1px, 1px) }
+    60% { transform: translate(-1px, 1px) }
+    70% { transform: translate(1px, 1px) }
+    80% { transform: translate(-1px, -1px) }
+    90% { transform: translate(1px, 1px) }
+    100% { transform: translate(1px, -1px) }
+}
 
 body {
-    height: 3000px;
     width: auto;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+
+    overflow: hidden;
 }
+
+/* shake on hover global 
+   makes it easier to have a lot of shaking 
+*/
+:not(.disabled) > .shakeonhover:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
