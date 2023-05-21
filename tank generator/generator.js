@@ -1,8 +1,16 @@
 
+// calibre values
+const calibres = [12,20,30,37,40,45,47,50,55,57,65,73,75,76,80,85,88,90,100,105,107,110,115,120,122,125,128,130,150,152,155,183,200,240];
 
+// get params
 const urlParams = new URLSearchParams(window.location.search);
 var user = urlParams.get('user');
 
+const readable = urlParams.get('readable') == "true";
+const vehicleType = urlParams.get('type');
+const vehicleVariant = urlParams.get('variant');
+
+// set up random number generator
 var myrng;
 if(user == null) { myrng = new Math.seedrandom(); }
 else {
@@ -11,95 +19,133 @@ else {
     console.log(user);
 }
 
-// min, max
+// generate for each variant/tier (superlight to superheavy)
+document.getElementById("json").textContent += generate_tank("superlight");
+document.getElementById("json").textContent += generate_tank("light");
+document.getElementById("json").textContent += generate_tank("medium");
+document.getElementById("json").textContent += generate_tank("heavy");
+document.getElementById("json").textContent += generate_tank("superheavy");
 
-document.getElementById("json").textContent += JSON.stringify(get_from_variant("tankette"), null, "\t");
-document.getElementById("json").textContent += JSON.stringify(get_from_variant("light"), null, "\t");
-document.getElementById("json").textContent += JSON.stringify(get_from_variant("medium"), null, "\t");
-document.getElementById("json").textContent += JSON.stringify(get_from_variant("heavy"), null, "\t");
-document.getElementById("json").textContent += JSON.stringify(get_from_variant("superheavy"), null, "\t");
 
 // generates tank based off of variant
-function get_from_variant(variant) {
-    if(variant == "tankette") {
-        return generate_tank( // tankette
+function generate_tank(variant) {
+    if(variant == "superlight") {
+        return generate_vehicle( // superlight / tankette
             "tank", // type
             2, 9, // weight
-            30, 200, // calibre
-            1, 5, // crew
+            2, 3, // crew
+            12, 30 // calibre
         )
     }
     else if(variant == "light") {
-        return generate_tank( // light
+        return generate_vehicle( // light
             "tank", // type
             10, 19, // weight
-            30, 200, // calibre
-            1, 5, // crew
+            2, 5, // crew
+            12, 55 // calibre
         )
     }
     else if(variant == "medium") {
-        return generate_tank( // medium
+        return generate_vehicle( // medium
             "tank", // type
             20, 39, // weight
-            30, 200, // calibre
-            1, 5, // crew
+            3, 5, // crew
+            37, 88 // calibre
         )
     }
     else if(variant == "heavy") {
-        return generate_tank( // heavy
+        return generate_vehicle( // heavy
             "tank", // type
             40, 99, // weight
-            30, 200, // calibre
-            1, 5, // crew
+            4, 6, // crew
+            57, 155 // calibre
         )
     }
     else if(variant == "superheavy") {
-        return generate_tank( // superheavy
+        return generate_vehicle( // superheavy
             "tank", // type
             100, 200, // weight
-            30, 200, // calibre
-            1, 5, // crew
+            5, 8, // crew
+            75, 240 // calibre
         )
     }
 }
 
-function generate_tank(
+function generate_vehicle(
     vehicleType,
     minWeight, maxWeight,
-    minCalibre, maxCalibre,
-    minCrew, maxCrew) 
+    minCrew, maxCrew,
+    minCalibre, maxCalibre) 
 {
-    var tank = {};
+    var vehicle = {};
     
-    tank.type = vehicleType;
-    tank.weight = getRandomInt(minWeight, maxWeight);
-    tank.variant = get_weight_variant(tank.weight);
-    tank.calibre = getRandomInt(minCalibre, maxCalibre);
-    tank.crewCount = getRandomInt(minCrew, maxCrew);
+    vehicle.type = vehicleType;
+    vehicle.weight = getRandomInt(minWeight, maxWeight);
+    vehicle.variant = get_weight_variant(vehicle.weight);
+    vehicle.calibre = get_real_calibre(getRandomInt(minCalibre, maxCalibre));
+    vehicle.crewCount = getRandomInt(minCrew, maxCrew);
     
-    // engine
+    // variant dependant stuff
+    if(vehicle.variant == "superlight") 
+    { 
+        vehicle.cylinderCount = getRandomInt(2, 6);
+    }
+    else if(vehicle.variant == "light") 
+    { 
+        vehicle.cylinderCount = getRandomInt(5, 8);
+    }
+    else if(vehicle.variant == "medium") 
+    { 
+        vehicle.cylinderCount = getRandomInt(6, 12); 
+    }
+    else if(vehicle.variant == "heavy") 
+    { 
+        vehicle.cylinderCount = getRandomInt(9, 30);
+    }
+    else if(vehicle.variant == "superheavy") 
+    { 
+        vehicle.cylinderCount = getRandomInt(12, 12 + (vehicle.weight - 100) / 20);
+    }
     
-    if(tank.variant == "tankette") { tank.cylinderCount = getRandomInt(2, 6) }
-    else if(tank.variant == "light") { tank.cylinderCount = getRandomInt(5, 8) }
-    else if(tank.variant == "medium") { tank.cylinderCount = getRandomInt(6, 12) }
-    else if(tank.variant == "heavy") { tank.cylinderCount = getRandomInt(8, 16) }
-    else if(tank.variant == "superheavy") { tank.cylinderCount = getRandomInt(12, 12 + (tank.weight - 100) / 20) }
+    if(vehicle.cylinderCount > 12 && vehicle.cylinderCount & 1) { vehicle.cylinderCount += 1; } // add 1 if the cylinder count is odd and more than 12
     
-    if(tank.cylinderCount > 12 && tank.cylinderCount & 1) { tank.cylinderCount += 1; } // add 1 if the cylinder count is odd and more than 12
+    vehicle.cylinderVolume = Math.round(get_cylinder_vol(vehicle.weight, vehicle.cylinderCount) * 1000) / 1000;
     
-    tank.cylinderVolume = get_cylinder_vol(tank.weight, tank.cylinderCount);
-    
-    return tank;
+    if(readable) {
+        var engineType = "V";
+        
+        var fullVehicleType = vehicle.variant + " " + vehicle.type;
+
+        // special cases
+        if(vehicle.variant == "superlight") {
+            if(vehicle.type == "tank") { fullVehicleType = "tankette"; }
+            if(vehicle.type == "armoured car") { fullVehicleType = "combat car"; }
+        }
+
+        // random engine type
+        var randomEngine = getRandomInt(0,5);
+        if(randomEngine == 1) { engineType = "inline "; }
+        else if(randomEngine == 2) { engineType = "radial "; }
+        
+        return "Build a " + vehicle.weight + "-ton " + fullVehicleType 
+            + " with a " + vehicle.calibre + "mm gun. " 
+            + vehicle.crewCount + " crew members, and a " + vehicle.cylinderVolume + " L/cyl "
+            + engineType + vehicle.cylinderCount + " engine!\n";
+    }
+    else {
+        return JSON.stringify(vehicle);
+    }
+
 }
     
 // weights:
-// <10 tankette
+// <10 superlight/tankette
 // 10-20 light
 // 20-40 medium
 // 40-100 heavy
 function get_weight_variant(weight) {
     if(weight < 10) {
-        return "tankette";
+        return "superlight";
     } else if(weight < 20) {
         return "light";
     } else if(weight < 40) {
@@ -118,6 +164,15 @@ function get_cylinder_vol(weight, cylCount) {
     var hp = weight * (getRandom(10, 21)) // random 10-20 tons
     
     return hp * (1/20) * (1/cylCount) 
+}
+
+function get_real_calibre(calibre) {
+   
+    var closest = calibres.reduce(function(prev, curr) {
+        return (Math.abs(curr - calibre) < Math.abs(prev - calibre) ? curr : prev);
+    });
+
+    return closest
 }
 
 
