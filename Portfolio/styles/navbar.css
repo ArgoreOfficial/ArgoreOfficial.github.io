@@ -1,20 +1,6 @@
-@keyframes shake {
-    0% { transform: translate(1px, 1px) }
-    10% { transform: translate(-1px, -1px) }
-    20% { transform: translate(-1px, 0px) }
-    30% { transform: translate(1px, 1px) }
-    40% { transform: translate(1px, -1px) }
-    50% { transform: translate(-1px, 1px) }
-    60% { transform: translate(-1px, 1px) }
-    70% { transform: translate(1px, 1px) }
-    80% { transform: translate(-1px, -1px) }
-    90% { transform: translate(1px, 1px) }
-    100% { transform: translate(1px, -1px) }
-}
+
 
 nav {
-    background: white;
-    
     display: grid;
     grid-template-columns: auto auto auto auto;
     text-align: center;
@@ -38,7 +24,7 @@ nav > div {
 
 nav > .asleep {
     transition: top 0.6s ease; 
-    top: -50%;
+    top: -20%;
 }
 
 nav > .awake {
@@ -47,12 +33,10 @@ nav > .awake {
 }
 
 nav.enabled > .asleep:hover {
-    top: -40%;
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
+    top: -10%;
 }
 
-/* Fella */
+/* Fella Body */
 
 nav > div > .body {
     background-image: url("../images/fella.png");
@@ -60,7 +44,6 @@ nav > div > .body {
     
     aspect-ratio: 104 / 109;
     width: calc(104px * 2);
-
 }
 
 nav > div > .back {
@@ -72,6 +55,33 @@ nav > div > .back {
 
     position: absolute;
     top: -120vh;
+}
+
+/* Text */
+
+nav > div > .text {
+    background-size: cover;
+
+    aspect-ratio: 104 / 43;
+    width: 100%;
+    position: relative;
+    top: -60%;
+}
+
+nav > #button_home > .text {
+    background-image: url("../images/nav_home.png");
+}
+
+nav > #button_about > .text {
+    background-image: url("../images/nav_about.png");
+}
+
+nav > #button_projects > .text {
+    background-image: url("../images/nav_projects.png");
+}
+
+nav > #button_contact > .text {
+    background-image: url("../images/nav_contact.png");
 }
 
 /* Fella Face */

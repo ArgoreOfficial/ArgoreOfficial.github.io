@@ -1,0 +1,75 @@
+@keyframes slideToTop {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* basic div */
+
+.ajaxpage div {
+  display: block;
+  background: white;
+  border: solid black 4px;
+  margin: 10px;
+}
+
+.ajaxpage .button {
+  display: inline-grid;
+  width: 150px;
+  height: 100px;
+}
+
+.ajaxpage .spacer {
+  background: none;
+  display: block;
+  height: 200px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+/* ajax main stuff */
+
+.ajaxpage {
+  width: 100%;
+  height: 100%;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border: solid black 4px;
+}
+
+.ajaxpage.ajaxtransition {
+  animation: 0.6s ease-out 0s 1 slideToTop;
+}
+
+.ajaxpage.home {
+  background: red;
+}
+
+.ajaxpage.about {
+  background: blue;
+}
+
+.ajaxpage.projects {
+  background: gold;
+}
+
+.ajaxpage.contact {
+  background: greenyellow;
+}
+
+/* Projects Page */
+
+.projects_container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  text-align: center;
+  gap: 40px;
+}
