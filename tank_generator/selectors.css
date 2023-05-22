@@ -1,0 +1,49 @@
+.select_menu {
+    position: relative;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+    
+    padding: 10px;
+}
+
+
+.select_menu div {
+    background-color: #333333;
+    cursor: pointer;
+    flex: 0 0 calc(25%);
+
+    transition: background-color ease 200ms, transform ease 100ms;
+
+    margin: 5px 5px;
+    border-radius: 100vw;
+}
+
+.select_menu div:hover {
+    background-color: #555555;
+}
+
+.select_menu div:active {
+    transform: scale(98%);
+}
+
+.select_menu div.selected {
+    background-color: #F38906;
+}
+
+.select_menu div.selected:hover {
+    background-color: #F35D06;
+}
+
+.select_menu div p {
+    display: block;
+    text-align: center;
+
+    font-size: larger;
+
+    padding: auto;
+    user-select: none;
+}

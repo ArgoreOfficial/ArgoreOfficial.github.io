@@ -3,22 +3,18 @@
 const calibres = [12,20,30,37,40,45,47,50,55,57,65,73,75,76,80,85,88,90,100,105,107,110,115,120,122,125,128,130,150,152,155,183,200,240];
 
 // get params
-const urlParams = new URLSearchParams(window.location.search);
 var user = urlParams.get('user');
-const formatJson = urlParams.get('json') != null;
-const vehicleType = urlParams.get('type');
-const vehicleVariant = urlParams.get('variant');
-
 var myrng;
 
+// init generate button
+document.getElementById("generate_button").addEventListener("click", buttonclick);
+buttonclick();
 
-// generate button
-document.getElementById("generate_button").addEventListener("click", function () {
+function buttonclick() {
     init_rng();
     
-    
     var e = document.getElementById("variant_select");
-    var variantText = e.options[e.selectedIndex].value;
+    var variantText = get_selected("variant_selector");
     var generatedVehicle;
     
     if(variantText == "random") {
@@ -45,7 +41,7 @@ document.getElementById("generate_button").addEventListener("click", function ()
         generatedVehicle = generate_tank(variantText);
     }
     document.getElementById('result').textContent = generatedVehicle;
-});
+}
 
 // set up random number generator
 function init_rng() {
@@ -117,24 +113,19 @@ function generate_vehicle(
     vehicle.crewCount = getRandomInt(minCrew, maxCrew);
     
     // variant dependant stuff
-    if(vehicle.variant == "superlight") 
-    { 
+    if(vehicle.variant == "superlight") { 
         vehicle.cylinderCount = getRandomInt(2, 6);
     }
-    else if(vehicle.variant == "light") 
-    { 
+    else if(vehicle.variant == "light") { 
         vehicle.cylinderCount = getRandomInt(5, 8);
     }
-    else if(vehicle.variant == "medium") 
-    { 
+    else if(vehicle.variant == "medium") { 
         vehicle.cylinderCount = getRandomInt(6, 12); 
     }
-    else if(vehicle.variant == "heavy") 
-    { 
+    else if(vehicle.variant == "heavy") { 
         vehicle.cylinderCount = getRandomInt(9, 30);
     }
-    else if(vehicle.variant == "superheavy") 
-    { 
+    else if(vehicle.variant == "superheavy") { 
         vehicle.cylinderCount = getRandomInt(12, 12 + (vehicle.weight - 100) / 20);
     }
     
@@ -142,30 +133,26 @@ function generate_vehicle(
     
     vehicle.cylinderVolume = Math.round(get_cylinder_vol(vehicle.weight, vehicle.cylinderCount) * 1000) / 1000;
     
-    if(!formatJson) {
-        var engineType = "V";
-        
-        var fullVehicleType = vehicle.variant + " " + vehicle.type;
+    var engineType = "V";
+    
+    var fullVehicleType = vehicle.variant + " " + vehicle.type;
 
-        // special cases
-        if(vehicle.variant == "superlight") {
-            if(vehicle.type == "tank") { fullVehicleType = "tankette"; }
-            if(vehicle.type == "armoured car") { fullVehicleType = "combat car"; }
-        }
+    // special cases
+    if(vehicle.variant == "superlight") {
+        if(vehicle.type == "tank") { fullVehicleType = "tankette"; }
+        if(vehicle.type == "armoured car") { fullVehicleType = "combat car"; }
+    }
 
-        // random engine type
-        var randomEngine = getRandomInt(0,5);
-        if(randomEngine == 1) { engineType = "inline "; }
-        else if(randomEngine == 2) { engineType = "radial "; }
-        
-        return "Build a " + vehicle.weight + "-ton " + fullVehicleType 
-            + " with a " + vehicle.calibre + "mm gun. " 
-            + vehicle.crewCount + " crew members, and a " + vehicle.cylinderVolume + " L/cyl "
-            + engineType + vehicle.cylinderCount + " engine!\n";
-    }
-    else {
-        return JSON.stringify(vehicle);
-    }
+    // random engine type
+    var randomEngine = getRandomInt(0,5);
+    if(randomEngine == 1) { engineType = "inline "; }
+    else if(randomEngine == 2) { engineType = "radial "; }
+    
+    return "Build a " + vehicle.weight + "-ton " + fullVehicleType 
+        + " with a " + vehicle.calibre + "mm gun. " 
+        + vehicle.crewCount + " crew members, and a " + vehicle.cylinderVolume + " L/cyl "
+        + engineType + vehicle.cylinderCount + " engine!\n";
+
 
 }
     

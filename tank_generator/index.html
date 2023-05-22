@@ -7,34 +7,41 @@
     <title>Sprocket Tank Generator</title>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    <script src="./main.js" defer></script>
+    <script src="./selectors.js" defer></script>
     <script src="./generator.js" defer></script>
-    <link rel="stylesheet" href="./dropdown.css">
+
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./selectors.css">
 </head>
-<body>
-    
-    <label for="vehicletype">Vehicle Type:</label>
-    <select name="variant" id="variant">
-        <option value="tank">Tank</option>
-        <option value="tank_destroyer">Tank Destroyer</option>
-        <option value="assault_gun">Assault Gun</option>
-        <option value="armoured_car">Armoured Car</option>
-    </select>
+<body class="compact">
+    <div id="settings">
+        <div id="settings_toggle"></div>
 
-    <br>
-    
-    <label for="variant">Variant:</label>
-    <select name="variant" id="variant_select">
-        <option value="random">Random</option>
-        <option value="superlight">Superlight</option>
-        <option value="light">Light</option>
-        <option value="medium">Medium</option>
-        <option value="heavy">Heavy</option>
-        <option value="superheavy">Superheavy</option>
-    </select>
+        <div class="select_menu" id="type_selector">
+            <div data-option="random"> <p> Random </p> </div>
+            <div data-option="tank"> <p> Tank </p> </div>
+            <div data-option="tank_destroyer"> <p> Tank Destroyer </p> </div>
+            <div data-option="assault_gun"> <p> Assault Gun </p> </div>
+            <div data-option="armoured_car"> <p> Armoured Car </p> </div>
+        </div>
+        
+        <div class="select_menu" id="variant_selector">
+            <div data-option="random"> <p> Random </p> </div>
+            <div data-option="superlight"> <p> Superlight </p> </div>
+            <div data-option="light"> <p> Light </p> </div>
+            <div data-option="medium"> <p> Medium </p> </div>
+            <div data-option="heavy"> <p> Heavy </p> </div>
+            <div data-option="superheavy"> <p> Superheavy </p> </div>
+        </div>
+    </div>
+    <div id="generation">
+        <div id="settings_button" onclick="toggle_settings()"> <p> Settings </p> </div>
+        <div id="generate_button"> <p> Generate </p> </div>
+        
+        <p id="result"></p>
+    </div>
 
-    <br><br>
-    <input type="submit" value="Generate" id="generate_button">
 
-    <pre id="result"></pre>
 </body>
 </html>

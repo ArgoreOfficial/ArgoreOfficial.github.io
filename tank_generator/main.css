@@ -1,0 +1,98 @@
+body {
+    background-color: #121212; 
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+#settings {
+    position: relative;
+    transition: filter ease 2s, transform ease 2s;
+    
+    
+    filter: opacity(100%);
+    transform: none;
+    height: auto;
+}
+
+
+body.compact #settings {
+    filter: opacity(10%);
+    transform: translateY(-100%);
+}
+
+#generation {
+    position: absolute;
+    top: 0;
+    transition: top ease 2s;
+    
+    width: 100%;
+    margin: 0;   
+}
+
+
+#generate_button {
+    position: relative;
+    
+    width: fit-content;
+    height: 70px;
+    background-color: crimson;
+    border-radius: 100vw;
+    
+    cursor: pointer;
+    
+    transition: background-color ease 200ms, transform ease 100ms;
+    
+    margin: auto;   
+}
+
+#settings_button {
+    width: fit-content;
+    background-color: royalblue;
+    border-radius: 100vw;
+    
+    cursor: pointer;
+    transition: background-color ease 200ms, transform ease 100ms;
+    
+    margin: auto;
+}
+
+#settings_button:hover {
+    background-color: cornflowerblue;
+}
+
+#settings_button:active {
+    transform: scale(98%);
+}
+
+#settings_button p {
+    font-size: large;
+    text-align: center;
+    padding: 0.5rem 2rem;
+    user-select: none;
+}
+
+#generate_button:hover {
+    background-color: #D12E5E;
+}
+
+#generate_button:active {
+    transform: scale(98%);
+}
+
+#generate_button p {
+    font-size: xx-large;
+    text-align: center;
+    padding: 1rem 4rem;
+    user-select: none;
+}
+
+#result {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+
+    padding: 5rem;
+    text-align: center;
+}
