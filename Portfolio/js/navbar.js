@@ -17,7 +17,8 @@ function nav_button_click(button_name, filepath) {
   document.getElementById("navbar").classList.replace("enabled", "disabled"); 
   
   // mark old one for deletion
-  var oldAjax = document.getElementById("pageroot").firstChild;
+  var oldAjax = document.getElementById("ajax");
+  console.log(oldAjax);
   if(oldAjax) { oldAjax.id = "ajaxremove"; }
 
   // load page

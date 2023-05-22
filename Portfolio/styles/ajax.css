@@ -10,7 +10,6 @@
 /* basic div */
 
 .ajaxpage div {
-  display: block;
   background: white;
   border: solid black 4px;
   margin: 10px;
@@ -69,7 +68,16 @@
 
 .projects_container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-gap: 16px;
+  padding: 16px;
+  grid-template-columns: repeat(auto-fill,auto);
+  grid-auto-flow: column;
+  overflow-x: auto;
+}
+
+.projects_container > .project_card {
+  height: 20rem;
+  width: 300px;
+  
   text-align: center;
-  gap: 40px;
 }
