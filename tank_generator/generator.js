@@ -5,30 +5,61 @@ const calibres = [12,20,30,37,40,45,47,50,55,57,65,73,75,76,80,85,88,90,100,105,
 // get params
 const urlParams = new URLSearchParams(window.location.search);
 var user = urlParams.get('user');
-
-const readable = urlParams.get('readable') == "true";
+const formatJson = urlParams.get('json') != null;
 const vehicleType = urlParams.get('type');
 const vehicleVariant = urlParams.get('variant');
 
-// set up random number generator
 var myrng;
-if(user == null) { myrng = new Math.seedrandom(); }
-else {
-    user = user.replace(/ /g,'').toLowerCase()
-    myrng = new Math.seedrandom(user);
-    console.log(user);
+
+
+// generate button
+document.getElementById("generate_button").addEventListener("click", function () {
+    init_rng();
+    
+    
+    var e = document.getElementById("variant_select");
+    var variantText = e.options[e.selectedIndex].value;
+    var generatedVehicle;
+    
+    if(variantText == "random") {
+        var randomVariant = getRandomInt(0,4);
+        switch(randomVariant) {
+            case 0:
+                generatedVehicle = generate_tank("superlight");
+                break;
+            case 1:
+                generatedVehicle = generate_tank("light");
+                break;
+            case 2:
+                generatedVehicle = generate_tank("medium");
+                break;
+            case 3:
+                generatedVehicle = generate_tank("heavy");
+                break;
+            case 4:
+                generatedVehicle = generate_tank("superheavy");
+                break;
+        }
+    }
+    else {
+        generatedVehicle = generate_tank(variantText);
+    }
+    document.getElementById('result').textContent = generatedVehicle;
+});
+
+// set up random number generator
+function init_rng() {
+    if(user == null) { myrng = new Math.seedrandom(); }
+    else {
+        user = user.replace(/ /g,'').toLowerCase()
+        myrng = new Math.seedrandom(user);
+        console.log(user);
+    }
 }
-
-// generate for each variant/tier (superlight to superheavy)
-document.getElementById("json").textContent += generate_tank("superlight");
-document.getElementById("json").textContent += generate_tank("light");
-document.getElementById("json").textContent += generate_tank("medium");
-document.getElementById("json").textContent += generate_tank("heavy");
-document.getElementById("json").textContent += generate_tank("superheavy");
-
 
 // generates tank based off of variant
 function generate_tank(variant) {
+
     if(variant == "superlight") {
         return generate_vehicle( // superlight / tankette
             "tank", // type
@@ -111,7 +142,7 @@ function generate_vehicle(
     
     vehicle.cylinderVolume = Math.round(get_cylinder_vol(vehicle.weight, vehicle.cylinderCount) * 1000) / 1000;
     
-    if(readable) {
+    if(!formatJson) {
         var engineType = "V";
         
         var fullVehicleType = vehicle.variant + " " + vehicle.type;
