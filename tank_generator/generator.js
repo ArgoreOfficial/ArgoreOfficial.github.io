@@ -1,5 +1,12 @@
 // calibre values
-const calibres = [12,20,30,37,40,45,47,50,55,57,65,73,75,76,80,85,88,90,100,105,107,110,115,120,122,125,128,130,150,152,155,183,200,240];
+const calibres = [0,2,7,12,20,30,37,40,45,47,50,55,57,65,73,75,76,80,85,88,90,100,105,107,110,115,120,122,125,128,130,150,152,155,183,200,240];
+
+var types = [];
+var type_selector = document.getElementById("type_selector").children;
+for (i = 1; i < type_selector.length; i++) {
+    types.push(type_selector[i].getAttribute('data-option'));
+    console.log(types[types.length - 1]);
+}
 
 // get params
 var user = urlParams.get('user');
@@ -9,37 +16,15 @@ var myrng;
 document.getElementById("generate_button").addEventListener("click", buttonclick);
 buttonclick();
 
+// onclick function for the generate button
 function buttonclick() {
     init_rng();
     
-    var e = document.getElementById("variant_select");
+    var typeText = get_selected("type_selector");
     var variantText = get_selected("variant_selector");
-    var generatedVehicle;
     
-    if(variantText == "random") {
-        var randomVariant = getRandomInt(0,4);
-        switch(randomVariant) {
-            case 0:
-                generatedVehicle = generate_tank("superlight");
-                break;
-            case 1:
-                generatedVehicle = generate_tank("light");
-                break;
-            case 2:
-                generatedVehicle = generate_tank("medium");
-                break;
-            case 3:
-                generatedVehicle = generate_tank("heavy");
-                break;
-            case 4:
-                generatedVehicle = generate_tank("superheavy");
-                break;
-        }
-    }
-    else {
-        generatedVehicle = generate_tank(variantText);
-    }
-    document.getElementById('result').textContent = generatedVehicle;
+    if(typeText == "random") variantText = types[getRandomInt(0, types.length - 1)];
+    generate_from_type_variant(typeText, variantText);
 }
 
 // set up random number generator
@@ -52,62 +37,45 @@ function init_rng() {
     }
 }
 
-// generates tank based off of variant
-function generate_tank(variant) {
+// generates vehicle from type (tank, armoured car, etc.) and variation (light, medium, heavy, etc.)
+async function generate_from_type_variant(type, variant) {
+    var variantIndex = 0;
+    switch(variant) {
+        case "superlight": variantIndex = 0; break;
+        case "light": variantIndex = 1; break;
+        case "medium": variantIndex = 2; break;
+        case "heavy": variantIndex = 3; break;
+        case "superheavy": variantIndex = 4; break;
+        case "random": 
+            variantIndex = getRandomInt(0,4);
+            break;
+    }
 
-    if(variant == "superlight") {
-        return generate_vehicle( // superlight / tankette
-            "tank", // type
-            2, 9, // weight
-            2, 3, // crew
-            12, 30 // calibre
-        )
-    }
-    else if(variant == "light") {
-        return generate_vehicle( // light
-            "tank", // type
-            10, 19, // weight
-            2, 5, // crew
-            12, 55 // calibre
-        )
-    }
-    else if(variant == "medium") {
-        return generate_vehicle( // medium
-            "tank", // type
-            20, 39, // weight
-            3, 5, // crew
-            37, 88 // calibre
-        )
-    }
-    else if(variant == "heavy") {
-        return generate_vehicle( // heavy
-            "tank", // type
-            40, 99, // weight
-            4, 6, // crew
-            57, 155 // calibre
-        )
-    }
-    else if(variant == "superheavy") {
-        return generate_vehicle( // superheavy
-            "tank", // type
-            100, 200, // weight
-            5, 8, // crew
-            75, 240 // calibre
-        )
-    }
+    var text = await getFile("./vehicle_types/" + type + ".txt");
+    var textByLine = text.split("\n");
+    var values = textByLine[variantIndex].split(" ");
+
+    document.getElementById('result').textContent =  generate_vehicle(
+        type, variant,
+        values[0], values[1], 
+        values[2], values[3], 
+        values[4], values[5]
+    );
 }
 
+// generates vehicle using specified min and max values
+// vehicle type is only used for text
 function generate_vehicle(
-    vehicleType,
+    vehicleType, variant,
     minWeight, maxWeight,
     minCrew, maxCrew,
     minCalibre, maxCalibre) 
 {
     var vehicle = {};
-    
+
     vehicle.type = vehicleType;
     vehicle.weight = getRandomInt(minWeight, maxWeight);
-    vehicle.variant = get_weight_variant(vehicle.weight);
+    vehicle.variant = variant;
     vehicle.calibre = get_real_calibre(getRandomInt(minCalibre, maxCalibre));
     vehicle.crewCount = getRandomInt(minCrew, maxCrew);
     
@@ -132,46 +100,36 @@ function generate_vehicle(
     
     vehicle.cylinderVolume = Math.round(get_cylinder_vol(vehicle.weight, vehicle.cylinderCount) * 1000) / 1000;
     
+    return wordify(vehicle);
+}
+
+
+function wordify(vehicle) {
     var engineType = "V";
     
     var fullVehicleType = vehicle.variant + " " + vehicle.type;
-
-    // special cases
+    
+    // superlight special cases
     if(vehicle.variant == "superlight") {
         if(vehicle.type == "tank") { fullVehicleType = "tankette"; }
-        if(vehicle.type == "armoured car") { fullVehicleType = "combat car"; }
+        if(vehicle.type == "armoured car") { fullVehicleType = "scout car"; }
     }
-
+    
     // random engine type
     var randomEngine = getRandomInt(0,5);
     if(randomEngine == 1) { engineType = "inline "; }
     else if(randomEngine == 2) { engineType = "radial "; }
     
-    return "Build a " + vehicle.weight + "-ton " + fullVehicleType 
-        + " with a " + vehicle.calibre + "mm gun. " 
-        + vehicle.crewCount + " crew members, and a " + vehicle.cylinderVolume + " L/cyl "
-        + engineType + vehicle.cylinderCount + " engine!\n";
-
-
-}
+    var weightTypeGun = "Build a " + vehicle.weight + "-ton " + fullVehicleType + " with a " + vehicle.calibre + "mm gun. ";
     
-// weights:
-// <10 superlight/tankette
-// 10-20 light
-// 20-40 medium
-// 40-100 heavy
-function get_weight_variant(weight) {
-    if(weight < 10) {
-        return "superlight";
-    } else if(weight < 20) {
-        return "light";
-    } else if(weight < 40) {
-        return "medium";
-    } else if(weight < 100) {
-        return "heavy";
-    } else {
-        return "superheavy";
+    if(vehicle.calibre == 0) {
+        weightTypeGun = "Build an unarmed " + vehicle.weight + "-ton " + fullVehicleType + ", "
     }
+    
+    return weightTypeGun
+    + vehicle.crewCount + " crew members, and a " + vehicle.cylinderVolume + " L/cyl "
+    + engineType + vehicle.cylinderCount + " engine!\n";
+    
 }
 
 // the texan formula

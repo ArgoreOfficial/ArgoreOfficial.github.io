@@ -8,7 +8,7 @@ body {
 
 #settings {
     position: relative;
-    transition: filter ease 2s, transform ease 2s;
+    transition: filter ease 1s, transform ease 1s;
     
     
     filter: opacity(100%);
@@ -25,7 +25,7 @@ body.compact #settings {
 #generation {
     position: absolute;
     top: 0;
-    transition: top ease 2s;
+    transition: top ease 1s;
     
     width: 100%;
     margin: 0;   
