@@ -107,28 +107,32 @@ function generate_vehicle(
 function wordify(vehicle) {
     var engineType = "V";
     
-    var fullVehicleType = vehicle.variant + " " + vehicle.type;
-    
-    // superlight special cases
-    if(vehicle.variant == "superlight") {
-        if(vehicle.type == "tank") { fullVehicleType = "tankette"; }
-        if(vehicle.type == "armoured car") { fullVehicleType = "scout car"; }
-    }
-    
+    var fullVehicleType = vehicle.variant + " " + vehicle.type.replace("_", " ");
     // random engine type
     var randomEngine = getRandomInt(0,5);
     if(randomEngine == 1) { engineType = "inline "; }
     else if(randomEngine == 2) { engineType = "radial "; }
+    var engineText = ", and a " + vehicle.cylinderVolume + " L/cyl " + engineType + vehicle.cylinderCount + " engine!\n";
+    
+    // superlight special cases
+    console.log(vehicle.variant);
+    if(vehicle.variant == "superlight") {
+        if(vehicle.type == "tank") { 
+            fullVehicleType = "tankette"; 
+        }
+        else if(vehicle.type == "armoured_car") { 
+            fullVehicleType = "scout car"; 
+        }
+    }
     
     var weightTypeGun = "Build a " + vehicle.weight + "-ton " + fullVehicleType + " with a " + vehicle.calibre + "mm gun. ";
     
-    if(vehicle.calibre == 0) {
+    if(vehicle.calibre == 0) { // unarmed special case
         weightTypeGun = "Build an unarmed " + vehicle.weight + "-ton " + fullVehicleType + ", "
     }
-    
-    return weightTypeGun
-    + vehicle.crewCount + " crew members, and a " + vehicle.cylinderVolume + " L/cyl "
-    + engineType + vehicle.cylinderCount + " engine!\n";
+
+
+    return weightTypeGun + vehicle.crewCount + " crew members" + engineText;
     
 }
 
