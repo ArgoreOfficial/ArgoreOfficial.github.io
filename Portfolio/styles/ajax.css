@@ -9,10 +9,15 @@
 
 /* basic div */
 
-.ajaxpage div {
+.ajaxpage div, .ajaxpage a {
   background: white;
   border: solid black 4px;
   margin: 10px;
+  color: black;
+}
+
+.ajaxpage a {
+  text-decoration: none;
 }
 
 .ajaxpage .button {
