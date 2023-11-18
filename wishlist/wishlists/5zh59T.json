@@ -8,15 +8,15 @@
 			[
 				{
 					"img":"https://cdn.cloudflare.steamstatic.com/steamdeck/images/ver2/overview3options.png", 
-					"desc":"Steamdeck. THE best handheld console on the market",
+					"desc":"Steamdeck",
 					"link":"https://www.steamdeck.com/en/",
 					"price":"4580 - 7423kr"
 				},
 				{
-					"img":"https://cdn.shopify.com/s/files/1/0321/7516/1479/products/2_a5d346a0-17a8-4699-8f46-e857424d87da_1024x1024@2x.jpg?v=1667899004", 
-					"desc":"Retroid Pocket 3+",
-					"link":"https://www.goretroid.com/collections/frontpage/products/retroid-pocket-3-handheld-retro-gaming-system-1",
-					"price":"1590kr"
+					"img":"https://m.media-amazon.com/images/I/51W-tEu1PJL.jpg", 
+					"desc":"Analogue Pocket",
+					"link":"https://store.analogue.co/#pocket",
+					"price":"2330kr"
 				}
 			]
 		},
@@ -24,18 +24,6 @@
 			"name":"Music",
 			"items":
 			[
-				{
-					"img":"https://www.needlejuicerecords.com/wp-content/uploads/2022/08/GoodandEvil1000.jpg", 
-					"desc":"Tally Hall – Good & Evil Vinyl",
-					"link":"https://needlejuicerecords.com/product/goodandevil/",
-					"price":"372kr"
-				},
-				{
-					"img":"https://merchbar.imgix.net/product/crop/1616/2439746/QATK9D-1660588262-4000x4000-1660588252-418467029703%20(1).jpg?auto=format&fit=max&w=750", 
-					"desc":"Bo Burnham - Inside Vinyl Box Set",
-					"link":"https://www.merchbar.com/pop/bo-burnham/bo-burnham-inside-vinyl-record",
-					"price":"1203kr"
-				},
 				{
 					"img":"https://cdn.travelling-merchant.com/media/catalog/product/cache/2/small_image/9df78eab33525d08d6e5fb8d27136e95/H/e/Heilung-Ofnir-DOUBLE-LP-Gatefold-66263-1_1.jpg", 
 					"desc":"Heilung - Ofnir Vinyl",
@@ -59,12 +47,6 @@
 					"desc":"Howl's Moving Castle Vinyl",
 					"link":"https://www.merchbar.com/jazz-blues/joe-hisaishi/joe-hisaishi-howl-s-moving-castle-image-symphonic-suite-vinyl-record",
 					"price":"774kr"
-				},
-				{
-					"img":"https://f4.bcbits.com/img/0029710347_10.jpg",
-					"desc":"Keygen Church Cassette (on ebay, uncertain of legitimacy)",
-					"link":"https://www.ebay.com/itm/225235999511",
-					"price":"1590kr"
 				}
 			]
 		},
@@ -119,6 +101,12 @@
 					"desc":"i want drink the chocolat :)",
 					"link":"https://easygoinggoth.creator-spring.com/listing/bubble-cat-mug?product=1637",
 					"price":"141kr"
+				},
+				{
+					"img":"", 
+					"desc":"Amulet books 1-8 (hardback)",
+					"link":"https://www.barnesandnoble.com/b/series/amulet/_/N-1z141jfZ2vd0;jsessionid=BF2288A7ABC99257E6CC905BD550585D.prodny_store02-atgap11",
+					"price":"275kr /st"
 				}
 			]
 		}
