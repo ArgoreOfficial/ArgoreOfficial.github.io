@@ -17,6 +17,12 @@
 					"desc":"Analogue Pocket",
 					"link":"https://store.analogue.co/#pocket",
 					"price":"2330kr"
+				},
+				{
+					"img":"https://resource.logitech.com/w_692,c_lpad,ar_4:3,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-mouse-top-view-pale-gray.png?v=1", 
+					"desc":"MX MASTER 3S",
+					"link":"https://www.logitech.com/sv-se/products/mice/mx-master-3s.910-006560.html",
+					"price":"1399kr"
 				}
 			]
 		},
